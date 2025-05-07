@@ -53,7 +53,7 @@ bracket_to_char = is `hu` '(' `la` is `hu` '{' `la` is `hu` '<' `la` is `hu` '['
               `la_` is `hu` ')' `la` is `hu` '}' `la` is `hu` '>' `la` is `hu` ']'
 
 punctuation_to_char :: Punctuate -> Char
-punctuation_to_char = is `hu` '\"' `la` is `hu` '\'' `la` is `hu` '#' `la` is `hu` '-' `la` is `hu` '@'
+punctuation_to_char = is `hu` '\"' `la` is `hu` '\'' `la` is `hu` '#' `la` is `hu` '=' `la` is `hu` '-' `la` is `hu` '@'
  `la` is `hu` '^' `la` is `hu` '_' `la` is `hu` '`' `la` is `hu` '|' `la` is `hu` '~'
  `la` is `hu` '+' `la` is `hu` '*' `la` is `hu` '%' `la` is `hu` '&' `la` is `hu` '$' `la` is `hu` '\\' `la` is `hu` '/'
  `la` is `hu` '.' `la` is `hu` ',' `la` is `hu` ';' `la` is `hu` ':' `la` is `hu` '!' `la` is `hu` '?' `la` is `hu` ' '
@@ -117,6 +117,7 @@ char_to_ascii = \case
  '*' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Asterisk
  '+' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Plus
  '-' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Hyphen
+ '=' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Equality
  '@' -> Glyph `ha` Symbol `ha` Punctuate `hv` by At
  '^' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Circumflex
  '_' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Underscore
