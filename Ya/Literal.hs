@@ -45,6 +45,14 @@ instance IsList (List item) where
   worker (c : []) = Item c `ha` Last `hv` Unit
   worker (c : cs) = Item c `ha` Next `hv` worker cs
 
+instance IsList ((Only `P'T'I'TT'I` Shafted List) item) where
+ type Item ((Only `P'T'I'TT'I` Shafted List) item) = item
+ fromList = to @(Scrolling List) `ha` fromList @(Nonempty List item)
+
+instance IsList ((List `P'T'I'TT'I` Shafted List) item) where
+ type Item ((List `P'T'I'TT'I` Shafted List) item) = item
+ fromList = to @(Sliding List) `ha` fromList @(Nonempty List item)
+
 caret_to_char :: Caret -> Char
 caret_to_char = is `hu` '\HT' `la` is `hu` '\LF' `la` is `hu` '\ESC' `la` is `hu` '\BS' `la` is `hu` '\DEL'
 
