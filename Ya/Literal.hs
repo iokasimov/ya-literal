@@ -16,6 +16,17 @@ instance IsString (List Char) where
   worker (c : []) = Item c `ha` Last `hv` Unit
   worker (c : cs) = Item c `ha` Next `hv` worker cs
 
+instance IsString (List Glyph) where
+ fromString [] = T'TT'I (None Unit)
+ fromString x = T'TT'I (Some (Construct (worker x))) where
+  worker (c : []) = Item `hv` glyph_to_ascii c `ha` Last `hv` Unit
+  worker (c : cs) = Item `hv` glyph_to_ascii c `ha` Next `hv` worker cs
+
+instance IsString (Construction Optional Glyph) where
+ fromString x = Construct (worker x) where
+  worker (c : []) = Item `hv` glyph_to_ascii c `ha` Last `hv` Unit
+  worker (c : cs) = Item `hv` glyph_to_ascii c `ha` Next `hv` worker cs
+
 instance IsString (List ASCII) where
  fromString [] = T'TT'I (None Unit)
  fromString x = T'TT'I (Some (Construct (worker x))) where
@@ -92,7 +103,104 @@ ascii_to_char = is
   `la` punctuation_to_char `ha'he` is
  `la_` caret_to_char `ha'he` is
 
-char_to_ascii :: Char -> ASCII
+glyph_to_ascii = \case
+ ' ' -> Symbol `ha` Punctuate `hv` by Space
+ '/' -> Symbol `ha` Punctuate `hv` by (Back `ha` Slash)
+ '\\' -> Symbol `ha` Punctuate `hv` by Slash
+ '(' -> Symbol `ha` Bracket `ha` Opened `li` Round
+ ')' -> Symbol `ha` Bracket `ha` Closed `li` Round
+ '{' -> Symbol `ha` Bracket `ha` Opened `li` Curly
+ '}' -> Symbol `ha` Bracket `ha` Closed `li` Curly
+ '<' -> Symbol `ha` Bracket `ha` Opened `li` Angle
+ '>' -> Symbol `ha` Bracket `ha` Closed `li` Angle
+ '[' -> Symbol `ha` Bracket `ha` Opened `li` Square
+ ']' -> Symbol `ha` Bracket `ha` Closed `li` Square
+ '"' -> Symbol `ha` Punctuate `hv` by Doublequote
+ '\'' -> Symbol `ha` Punctuate `hv` by Singlequote
+ '.' -> Symbol `ha` Punctuate `hv` by Period
+ ',' -> Symbol `ha` Punctuate `hv` by Comma
+ ';' -> Symbol `ha` Punctuate `hv` by Semicolon
+ ':' -> Symbol `ha` Punctuate `hv` by Colon
+ '!' -> Symbol `ha` Punctuate `hv` by Exclam
+ '?' -> Symbol `ha` Punctuate `hv` by Question
+ '#' -> Symbol `ha` Punctuate `hv` by Hash
+ '$' -> Symbol `ha` Punctuate `hv` by Dollar
+ '%' -> Symbol `ha` Punctuate `hv` by Percent
+ '&' -> Symbol `ha` Punctuate `hv` by Ampersand
+ '*' -> Symbol `ha` Punctuate `hv` by Asterisk
+ '+' -> Symbol `ha` Punctuate `hv` by Plus
+ '-' -> Symbol `ha` Punctuate `hv` by Hyphen
+ '=' -> Symbol `ha` Punctuate `hv` by Equality
+ '@' -> Symbol `ha` Punctuate `hv` by At
+ '^' -> Symbol `ha` Punctuate `hv` by Circumflex
+ '_' -> Symbol `ha` Punctuate `hv` by Underscore
+ '`' -> Symbol `ha` Punctuate `hv` by Grave
+ '|' -> Symbol `ha` Punctuate `hv` by Bar
+ '~' -> Symbol `ha` Punctuate `hv` by Tilde
+ 'A' -> Letter `ha` Upper `hv` by A
+ 'B' -> Letter `ha` Upper `hv` by B
+ 'C' -> Letter `ha` Upper `hv` by C
+ 'D' -> Letter `ha` Upper `hv` by D
+ 'E' -> Letter `ha` Upper `hv` by E
+ 'F' -> Letter `ha` Upper `hv` by F
+ 'G' -> Letter `ha` Upper `hv` by G
+ 'H' -> Letter `ha` Upper `hv` by H
+ 'I' -> Letter `ha` Upper `hv` by I
+ 'J' -> Letter `ha` Upper `hv` by J
+ 'K' -> Letter `ha` Upper `hv` by K
+ 'L' -> Letter `ha` Upper `hv` by L
+ 'M' -> Letter `ha` Upper `hv` by M
+ 'N' -> Letter `ha` Upper `hv` by N
+ 'O' -> Letter `ha` Upper `hv` by O
+ 'P' -> Letter `ha` Upper `hv` by P
+ 'Q' -> Letter `ha` Upper `hv` by Q
+ 'R' -> Letter `ha` Upper `hv` by R
+ 'S' -> Letter `ha` Upper `hv` by S
+ 'T' -> Letter `ha` Upper `hv` by T
+ 'U' -> Letter `ha` Upper `hv` by U
+ 'V' -> Letter `ha` Upper `hv` by V
+ 'W' -> Letter `ha` Upper `hv` by W
+ 'X' -> Letter `ha` Upper `hv` by X
+ 'Y' -> Letter `ha` Upper `hv` by Y
+ 'Z' -> Letter `ha` Upper `hv` by Z
+ 'a' -> Letter `ha` Lower `hv` by A
+ 'b' -> Letter `ha` Lower `hv` by B
+ 'c' -> Letter `ha` Lower `hv` by C
+ 'd' -> Letter `ha` Lower `hv` by D
+ 'e' -> Letter `ha` Lower `hv` by E
+ 'f' -> Letter `ha` Lower `hv` by F
+ 'g' -> Letter `ha` Lower `hv` by G
+ 'h' -> Letter `ha` Lower `hv` by H
+ 'i' -> Letter `ha` Lower `hv` by I
+ 'j' -> Letter `ha` Lower `hv` by J
+ 'k' -> Letter `ha` Lower `hv` by K
+ 'l' -> Letter `ha` Lower `hv` by L
+ 'm' -> Letter `ha` Lower `hv` by M
+ 'n' -> Letter `ha` Lower `hv` by N
+ 'o' -> Letter `ha` Lower `hv` by O
+ 'p' -> Letter `ha` Lower `hv` by P
+ 'q' -> Letter `ha` Lower `hv` by Q
+ 'r' -> Letter `ha` Lower `hv` by R
+ 's' -> Letter `ha` Lower `hv` by S
+ 't' -> Letter `ha` Lower `hv` by T
+ 'u' -> Letter `ha` Lower `hv` by U
+ 'v' -> Letter `ha` Lower `hv` by V
+ 'w' -> Letter `ha` Lower `hv` by W
+ 'x' -> Letter `ha` Lower `hv` by X
+ 'y' -> Letter `ha` Lower `hv` by Y
+ 'z' -> Letter `ha` Lower `hv` by Z
+ '0' -> Digit `hv` by Zero
+ '1' -> Digit `hv` by One
+ '2' -> Digit `hv` by Two
+ '3' -> Digit `hv` by Three
+ '4' -> Digit `hv` by Four
+ '5' -> Digit `hv` by Five
+ '6' -> Digit `hv` by Six
+ '7' -> Digit `hv` by Seven
+ '8' -> Digit `hv` by Eight
+ '9' -> Digit `hv` by Nine
+ _ -> error "Not a Glyph!"
+
 char_to_ascii = \case
  '\BS' -> Caret `hv` by (Back `ha` Space)
  '\HT' -> Caret `hv` by Tab
