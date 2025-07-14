@@ -98,10 +98,10 @@ ascii_to_char :: ASCII -> Char
 ascii_to_char = is
   `li` lower_latin_to_char
   `la` upper_latin_to_char
- `la_` digit_to_char `ha'he` is
- `la_` bracket_to_char `ha'he` is
-  `la` punctuation_to_char `ha'he` is
- `la_` caret_to_char `ha'he` is
+ `la_` digit_to_char `ha` is
+ `la_` bracket_to_char `ha` is
+  `la` punctuation_to_char `ha` is
+ `la_` caret_to_char `ha` is
 
 glyph_to_ascii = \case
  ' ' -> Symbol `ha` Punctuate `hv` by Space
