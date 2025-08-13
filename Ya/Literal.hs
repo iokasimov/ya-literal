@@ -27,6 +27,65 @@ instance IsString (Construction Optional Glyph) where
   worker (c : []) = Item `hv` glyph_to_ascii c `ha` Last `hv` Unit
   worker (c : cs) = Item `hv` glyph_to_ascii c `ha` Next `hv` worker cs
 
+instance IsString (Construction Optional Letter) where
+ fromString x = Construct (worker x) where
+  worker (c : []) = Item `hv` char_to_letter c `ha` Last `hv` Unit
+  worker (c : cs) = Item `hv` char_to_letter c `ha` Next `hv` worker cs
+
+char_to_letter :: Char -> Letter
+char_to_letter = \case
+ 'A' -> Upper `hv` by A
+ 'B' -> Upper `hv` by B
+ 'C' -> Upper `hv` by C
+ 'D' -> Upper `hv` by D
+ 'E' -> Upper `hv` by E
+ 'F' -> Upper `hv` by F
+ 'G' -> Upper `hv` by G
+ 'H' -> Upper `hv` by H
+ 'I' -> Upper `hv` by I
+ 'J' -> Upper `hv` by J
+ 'K' -> Upper `hv` by K
+ 'L' -> Upper `hv` by L
+ 'M' -> Upper `hv` by M
+ 'N' -> Upper `hv` by N
+ 'O' -> Upper `hv` by O
+ 'P' -> Upper `hv` by P
+ 'Q' -> Upper `hv` by Q
+ 'R' -> Upper `hv` by R
+ 'S' -> Upper `hv` by S
+ 'T' -> Upper `hv` by T
+ 'U' -> Upper `hv` by U
+ 'V' -> Upper `hv` by V
+ 'W' -> Upper `hv` by W
+ 'X' -> Upper `hv` by X
+ 'Y' -> Upper `hv` by Y
+ 'Z' -> Upper `hv` by Z
+ 'a' -> Lower `hv` by A
+ 'b' -> Lower `hv` by B
+ 'c' -> Lower `hv` by C
+ 'd' -> Lower `hv` by D
+ 'e' -> Lower `hv` by E
+ 'f' -> Lower `hv` by F
+ 'g' -> Lower `hv` by G
+ 'h' -> Lower `hv` by H
+ 'i' -> Lower `hv` by I
+ 'j' -> Lower `hv` by J
+ 'k' -> Lower `hv` by K
+ 'l' -> Lower `hv` by L
+ 'm' -> Lower `hv` by M
+ 'n' -> Lower `hv` by N
+ 'o' -> Lower `hv` by O
+ 'p' -> Lower `hv` by P
+ 'q' -> Lower `hv` by Q
+ 'r' -> Lower `hv` by R
+ 's' -> Lower `hv` by S
+ 't' -> Lower `hv` by T
+ 'u' -> Lower `hv` by U
+ 'v' -> Lower `hv` by V
+ 'w' -> Lower `hv` by W
+ 'x' -> Lower `hv` by X
+ x -> error "Not a latin character!"
+
 instance IsString (List ASCII) where
  fromString [] = T'TT'I (None Unit)
  fromString x = T'TT'I (Some (Construct (worker x))) where
