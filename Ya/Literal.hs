@@ -9,7 +9,8 @@ import "base" Data.String (IsString (fromString))
 import "base" GHC.Err (error)
 import "base" GHC.IsList (IsList (Item, toList, fromList))
 import "base" GHC.Integer (Integer)
-import "base" Text.Show (show)
+import "base" Text.Show (Show (show))
+import "base" System.IO (print)
 
 instance IsString (List Char) where
  fromString x = T'TT'I (Some (Construct (worker x))) where
@@ -31,6 +32,14 @@ instance IsString (Construction Optional Letter) where
  fromString x = Construct (worker x) where
   worker (c : []) = Item `hv` char_to_letter c `ha` Last `hv` Unit
   worker (c : cs) = Item `hv` char_to_letter c `ha` Next `hv` worker cs
+
+instance IsString (List Letter) where
+ fromString x = T'TT'I (Some (Construct (worker x))) where
+  worker (c : []) = Item `hv` char_to_letter c `ha` Last `hv` Unit
+  worker (c : cs) = Item `hv` char_to_letter c `ha` Next `hv` worker cs
+
+instance Show item => Show (List item) where
+ show = show `ha` toList
 
 char_to_letter :: Char -> Letter
 char_to_letter = \case
@@ -114,6 +123,10 @@ instance IsList (List item) where
  fromList xs = List (worker xs) where
   worker (c : []) = Item c `ha` Last `hv` Unit
   worker (c : cs) = Item c `ha` Next `hv` worker cs
+ toList xs = xs
+  `yokl` Prior `ha` Apply `ha` State `ha` Event `ha_` (:) `ho'ho` get
+  `he'he'hv___` []
+  `yi__` that @[_]
 
 instance IsList ((Only `P'T'I'TT'I` Shafted List) item) where
  type Item ((Only `P'T'I'TT'I` Shafted List) item) = item
