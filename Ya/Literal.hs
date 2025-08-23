@@ -138,8 +138,8 @@ instance IsList ((Only `P'T'I'TT'I` Shafted List) item) where
  fromList [sx,[x],xs] = T'TT'I'TTT'I (Only x `lu` T'TT'I'TTT'I (Labeled (fromList @(List item) (reverse sx)) `lu` Labeled (fromList @(List item) xs)))
 
 instance IsList ((List `P'T'I'TT'I` Shafted List) item) where
- type Item ((List `P'T'I'TT'I` Shafted List) item) = item
- fromList = to @(Sliding List) `ha` fromList @(Nonempty List item)
+ type Item ((List `P'T'I'TT'I` Shafted List) item) = [item]
+ fromList [sx,x,xs] = T'TT'I'TTT'I (fromList @(List item) x `lu` T'TT'I'TTT'I (Labeled (fromList @(List item) (reverse sx)) `lu` Labeled (fromList @(List item) xs)))
 
 caret_to_char :: Caret -> Char
 caret_to_char = is `hu` '\HT' `la` is `hu` '\LF' `la` is `hu` '\ESC' `la` is `hu` '\BS' `la` is `hu` '\DEL'
