@@ -7,6 +7,7 @@ import Ya.World
 import "base" Data.Char (Char)
 import "base" Data.String (IsString (fromString))
 import "base" GHC.Err (error)
+import "base" GHC.List (reverse)
 import "base" GHC.IsList (IsList (Item, toList, fromList))
 import "base" GHC.Integer (Integer)
 import "base" Text.Show (Show (show))
@@ -128,9 +129,13 @@ instance IsList (List item) where
   `he'he'hv___` []
   `yi__` that @[_]
 
+instance IsList (Shafted List item) where
+ type Item (Shafted List item) = [item]
+ fromList [sx,xs] = T'TT'I'TTT'I (Labeled (fromList @(List item) (reverse sx)) `lu` Labeled (fromList @(List item) xs))
+
 instance IsList ((Only `P'T'I'TT'I` Shafted List) item) where
- type Item ((Only `P'T'I'TT'I` Shafted List) item) = item
- fromList = to @(Scrolling List) `ha` fromList @(Nonempty List item)
+ type Item ((Only `P'T'I'TT'I` Shafted List) item) = [item]
+ fromList [sx,[x],xs] = T'TT'I'TTT'I (Only x `lu` T'TT'I'TTT'I (Labeled (fromList @(List item) (reverse sx)) `lu` Labeled (fromList @(List item) xs)))
 
 instance IsList ((List `P'T'I'TT'I` Shafted List) item) where
  type Item ((List `P'T'I'TT'I` Shafted List) item) = item
