@@ -14,13 +14,13 @@ import "base" Text.Show (Show (show))
 import "base" System.IO (print)
 
 instance IsString (List Char) where
- fromString x = T'TT'I (Some (Construct (worker x))) where
+ fromString x = T'TT'I (Exist (Construct (worker x))) where
   worker (c : []) = Item c `ha` Last `hv` Unit
   worker (c : cs) = Item c `ha` Next `hv` worker cs
 
 instance IsString (List Glyph) where
- fromString [] = T'TT'I (None Unit)
- fromString x = T'TT'I (Some (Construct (worker x))) where
+ fromString [] = T'TT'I (Empty Unit)
+ fromString x = T'TT'I (Exist (Construct (worker x))) where
   worker (c : []) = Item `hv` glyph_to_ascii c `ha` Last `hv` Unit
   worker (c : cs) = Item `hv` glyph_to_ascii c `ha` Next `hv` worker cs
 
@@ -35,7 +35,7 @@ instance IsString (Construction Optional Letter) where
   worker (c : cs) = Item `hv` char_to_letter c `ha` Next `hv` worker cs
 
 instance IsString (List Letter) where
- fromString x = T'TT'I (Some (Construct (worker x))) where
+ fromString x = T'TT'I (Exist (Construct (worker x))) where
   worker (c : []) = Item `hv` char_to_letter c `ha` Last `hv` Unit
   worker (c : cs) = Item `hv` char_to_letter c `ha` Next `hv` worker cs
 
@@ -97,8 +97,8 @@ char_to_letter = \case
  x -> error "Not a latin character!"
 
 instance IsString (List ASCII) where
- fromString [] = T'TT'I (None Unit)
- fromString x = T'TT'I (Some (Construct (worker x))) where
+ fromString [] = T'TT'I (Empty Unit)
+ fromString x = T'TT'I (Exist (Construct (worker x))) where
   worker (c : []) = Item `hv` char_to_ascii c `ha` Last `hv` Unit
   worker (c : cs) = Item `hv` char_to_ascii c `ha` Next `hv` worker cs
 
@@ -120,7 +120,7 @@ instance IsList (Construction Optional item) where
 
 instance IsList (List item) where
  type Item (List item) = item
- fromList [] = Empty @List `hv` Unit
+ fromList [] = empty @List
  fromList xs = List (worker xs) where
   worker (c : []) = Item c `ha` Last `hv` Unit
   worker (c : cs) = Item c `ha` Next `hv` worker cs
@@ -131,15 +131,15 @@ instance IsList (List item) where
 
 instance IsList (Shafted List item) where
  type Item (Shafted List item) = [item]
- fromList [sx,xs] = T'TT'I'TTT'I (Labeled (fromList @(List item) (reverse sx)) `lu` Labeled (fromList @(List item) xs))
+ fromList [sx,xs] = T'TT'I'TTT'I (Label (fromList @(List item) (reverse sx)) `lu` Label (fromList @(List item) xs))
 
-instance IsList ((Only `P'T'I'TT'I` Shafted List) item) where
- type Item ((Only `P'T'I'TT'I` Shafted List) item) = [item]
- fromList [sx,[x],xs] = T'TT'I'TTT'I (Only x `lu` T'TT'I'TTT'I (Labeled (fromList @(List item) (reverse sx)) `lu` Labeled (fromList @(List item) xs)))
+instance IsList ((Alone `P'T'I'TT'I` Shafted List) item) where
+ type Item ((Alone `P'T'I'TT'I` Shafted List) item) = [item]
+ fromList [sx,[x],xs] = T'TT'I'TTT'I (Alone x `lu` T'TT'I'TTT'I (Label (fromList @(List item) (reverse sx)) `lu` Label (fromList @(List item) xs)))
 
 instance IsList ((List `P'T'I'TT'I` Shafted List) item) where
  type Item ((List `P'T'I'TT'I` Shafted List) item) = [item]
- fromList [sx,x,xs] = T'TT'I'TTT'I (fromList @(List item) x `lu` T'TT'I'TTT'I (Labeled (fromList @(List item) (reverse sx)) `lu` Labeled (fromList @(List item) xs)))
+ fromList [sx,x,xs] = T'TT'I'TTT'I (fromList @(List item) x `lu` T'TT'I'TTT'I (Label (fromList @(List item) (reverse sx)) `lu` Label (fromList @(List item) xs)))
 
 caret_to_char :: Caret -> Char
 caret_to_char = is `hu` '\HT' `la` is `hu` '\LF' `la` is `hu` '\ESC' `la` is `hu` '\BS' `la` is `hu` '\DEL'
