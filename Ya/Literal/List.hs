@@ -12,17 +12,17 @@ import "base" Text.Show (Show (show))
 
 import Ya.Literal.Utils
 
-instance Show item => Show (List item) where
+instance Show i => Show (List i) where
  show = show `ha` toList
 
-instance IsList (Construction Optional item) where
- type Item (Construction Optional item) = item
+instance IsList (Construction Optional i) where
+ type Item (Construction Optional i) = i
  fromList x = Construct (worker x) where
   worker (c : []) = Item c `ha` Last `hv` Unit
   worker (c : cs) = Item c `ha` Next `hv` worker cs
 
-instance IsList (List item) where
- type Item (List item) = item
+instance IsList (List i) where
+ type Item (List i) = i
  fromList [] = empty @List
  fromList xs = List (worker xs) where
   worker (c : []) = Item c `ha` Last `hv` Unit
@@ -32,23 +32,29 @@ instance IsList (List item) where
   `he'he'hv___` []
   `yi__` that @[_]
 
-instance IsList (Shafted List item) where
- type Item (Shafted List item) = [item]
- fromList [sx,xs] = T'TT'I'TTT'I (Label (fromList @(List item) (reverse sx)) `lu` Label (fromList @(List item) xs))
+instance IsList (Shafted List i) where
+ type Item (Shafted List i) = [i]
+ fromList [sx,xs] = T'TT'I'TTT'I (Label (fromList @(List i) (reverse sx)) `lu` Label (fromList @(List i) xs))
 
-instance IsList ((Alone `P'T'I'TT'I` Shafted List) item) where
- type Item ((Alone `P'T'I'TT'I` Shafted List) item) = [item]
- fromList [sx,[x],xs] = T'TT'I'TTT'I (Alone x `lu` T'TT'I'TTT'I (Label (fromList @(List item) (reverse sx)) `lu` Label (fromList @(List item) xs)))
+instance IsList ((Alone `P'T'I'TT'I` Shafted List) i) where
+ type Item ((Alone `P'T'I'TT'I` Shafted List) i) = [i]
+ fromList [sx,[x],xs] = T'TT'I'TTT'I (Alone x `lu` T'TT'I'TTT'I (Label (fromList @(List i) (reverse sx)) `lu` Label (fromList @(List i) xs)))
 
-instance IsList ((List `P'T'I'TT'I` Shafted List) item) where
- type Item ((List `P'T'I'TT'I` Shafted List) item) = [item]
- fromList [sx,x,xs] = T'TT'I'TTT'I (fromList @(List item) x `lu` T'TT'I'TTT'I (Label (fromList @(List item) (reverse sx)) `lu` Label (fromList @(List item) xs)))
+instance IsList ((List `P'T'I'TT'I` Shafted List) i) where
+ type Item ((List `P'T'I'TT'I` Shafted List) i) = [i]
+ fromList [sx,x,xs] = T'TT'I'TTT'I (fromList @(List i) x `lu` T'TT'I'TTT'I (Label (fromList @(List i) (reverse sx)) `lu` Label (fromList @(List i) xs)))
 
--- instance IsList (Construction Optional `T'TT'I` Along k `T'I_` item) where
---  type Item (Construction Optional `T'TT'I` Along k `T'I_` item) = (k, item)
---  fromList x = T'TT'I (Construct (worker x)) where
---   worker (c : []) = Item c `ha` Last `hv` Unit
---   worker (c : cs) = Item c `ha` Next `hv` worker cs
+instance IsList (Construction Optional `T'TT'I` Along k `T'I_` i) where
+ type Item (Construction Optional `T'TT'I` Along k `T'I_` i) = (k, i)
+ fromList x = T'TT'I (Construct (worker x)) where
+  worker ((k,c) : []) = Item (c `lu` k `yi` Along) `ha` Last `hv` Unit
+  worker ((k,c) : kcs) = Item (c `lu` k `yi` Along) `ha` Next `hv` worker kcs
+
+instance IsList (List `T'TT'I` Along k `T'I_` i) where
+ type Item (List `T'TT'I` Along k `T'I_` i) = (k, i)
+ fromList x = T'TT'I (List (worker x)) where
+  worker ((k,c) : []) = Item (c `lu` k `yi` Along) `ha` Last `hv` Unit
+  worker ((k,c) : kcs) = Item (c `lu` k `yi` Along) `ha` Next `hv` worker kcs
 
 integer :: Integer -> Nonempty List Digit
 integer = show `ho` fromList `ho'yo` digit where
