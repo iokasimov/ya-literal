@@ -17,14 +17,14 @@ instance Show i => Show (List i) where
 
 instance IsList (Construction Optional i) where
  type Item (Construction Optional i) = i
- fromList x = Construct (worker x) where
+ fromList x = Build (worker x) where
   worker (c : []) = Item c `ha` Last `hv` Unit
   worker (c : cs) = Item c `ha` Next `hv` worker cs
 
 instance IsList (List i) where
  type Item (List i) = i
  fromList [] = empty @List
- fromList xs = List (worker xs) where
+ fromList xs = List (Exist (Build (worker xs))) where
   worker (c : []) = Item c `ha` Last `hv` Unit
   worker (c : cs) = Item c `ha` Next `hv` worker cs
  toList xs = xs
@@ -46,13 +46,13 @@ instance IsList ((List `P'T'I'TT'I` Shafted List) i) where
 
 instance IsList (Construction Optional `T'TT'I` Along k `T'I_` i) where
  type Item (Construction Optional `T'TT'I` Along k `T'I_` i) = (k, i)
- fromList x = T'TT'I (Construct (worker x)) where
+ fromList x = T'TT'I (Build (worker x)) where
   worker ((k,c) : []) = Item (c `lu` k `yi` Along) `ha` Last `hv` Unit
   worker ((k,c) : kcs) = Item (c `lu` k `yi` Along) `ha` Next `hv` worker kcs
 
 instance IsList (List `T'TT'I` Along k `T'I_` i) where
  type Item (List `T'TT'I` Along k `T'I_` i) = (k, i)
- fromList x = T'TT'I (List (worker x)) where
+ fromList x = T'TT'I (List (Exist (Build (worker x)))) where
   worker ((k,c) : []) = Item (c `lu` k `yi` Along) `ha` Last `hv` Unit
   worker ((k,c) : kcs) = Item (c `lu` k `yi` Along) `ha` Next `hv` worker kcs
 
