@@ -34,15 +34,15 @@ instance IsList (List i) where
 
 instance IsList (Shafted List i) where
  type Item (Shafted List i) = [i]
- fromList [sx,xs] = T'TT'I'TTT'I (Label (fromList @(List i) (reverse sx)) `lu` Label (fromList @(List i) xs))
+ fromList [sx,xs] = fromList @(List i) (reverse sx) `lu` fromList @(List i) xs
 
 instance IsList ((Alone `P'T'I'TT'I` Shafted List) i) where
  type Item ((Alone `P'T'I'TT'I` Shafted List) i) = [i]
- fromList [sx,[x],xs] = T'TT'I'TTT'I (Alone x `lu` T'TT'I'TTT'I (Label (fromList @(List i) (reverse sx)) `lu` Label (fromList @(List i) xs)))
+ fromList [sx,[x],xs] = Alone x `lu` (fromList @(List i) (reverse sx) `lu` fromList @(List i) xs)
 
 instance IsList ((List `P'T'I'TT'I` Shafted List) i) where
  type Item ((List `P'T'I'TT'I` Shafted List) i) = [i]
- fromList [sx,x,xs] = T'TT'I'TTT'I (fromList @(List i) x `lu` T'TT'I'TTT'I (Label (fromList @(List i) (reverse sx)) `lu` Label (fromList @(List i) xs)))
+ fromList [sx,x,xs] = T'TT'I'TTT'I (fromList @(List i) x `lu` (fromList @(List i) (reverse sx) `lu` fromList @(List i) xs))
 
 instance IsList (Construction Optional `T'TT'I` Along k `T'I_` i) where
  type Item (Construction Optional `T'TT'I` Along k `T'I_` i) = (k, i)
