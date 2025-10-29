@@ -10,56 +10,56 @@ import "base" GHC.Err (error)
 
 char_to_letter :: Char -> Letter
 char_to_letter = \case
- 'A' -> Upper `hv` by A
- 'B' -> Upper `hv` by B
- 'C' -> Upper `hv` by C
- 'D' -> Upper `hv` by D
- 'E' -> Upper `hv` by E
- 'F' -> Upper `hv` by F
- 'G' -> Upper `hv` by G
- 'H' -> Upper `hv` by H
- 'I' -> Upper `hv` by I
- 'J' -> Upper `hv` by J
- 'K' -> Upper `hv` by K
- 'L' -> Upper `hv` by L
- 'M' -> Upper `hv` by M
- 'N' -> Upper `hv` by N
- 'O' -> Upper `hv` by O
- 'P' -> Upper `hv` by P
- 'Q' -> Upper `hv` by Q
- 'R' -> Upper `hv` by R
- 'S' -> Upper `hv` by S
- 'T' -> Upper `hv` by T
- 'U' -> Upper `hv` by U
- 'V' -> Upper `hv` by V
- 'W' -> Upper `hv` by W
- 'X' -> Upper `hv` by X
- 'Y' -> Upper `hv` by Y
- 'Z' -> Upper `hv` by Z
- 'a' -> Lower `hv` by A
- 'b' -> Lower `hv` by B
- 'c' -> Lower `hv` by C
- 'd' -> Lower `hv` by D
- 'e' -> Lower `hv` by E
- 'f' -> Lower `hv` by F
- 'g' -> Lower `hv` by G
- 'h' -> Lower `hv` by H
- 'i' -> Lower `hv` by I
- 'j' -> Lower `hv` by J
- 'k' -> Lower `hv` by K
- 'l' -> Lower `hv` by L
- 'm' -> Lower `hv` by M
- 'n' -> Lower `hv` by N
- 'o' -> Lower `hv` by O
- 'p' -> Lower `hv` by P
- 'q' -> Lower `hv` by Q
- 'r' -> Lower `hv` by R
- 's' -> Lower `hv` by S
- 't' -> Lower `hv` by T
- 'u' -> Lower `hv` by U
- 'v' -> Lower `hv` by V
- 'w' -> Lower `hv` by W
- 'x' -> Lower `hv` by X
+ 'A' -> Upper `hv'he` A
+ 'B' -> Upper `hv'he` B
+ 'C' -> Upper `hv'he` C
+ 'D' -> Upper `hv'he` D
+ 'E' -> Upper `hv'he` E
+ 'F' -> Upper `hv'he` F
+ 'G' -> Upper `hv'he` G
+ 'H' -> Upper `hv'he` H
+ 'I' -> Upper `hv'he` I
+ 'J' -> Upper `hv'he` J
+ 'K' -> Upper `hv'he` K
+ 'L' -> Upper `hv'he` L
+ 'M' -> Upper `hv'he` M
+ 'N' -> Upper `hv'he` N
+ 'O' -> Upper `hv'he` O
+ 'P' -> Upper `hv'he` P
+ 'Q' -> Upper `hv'he` Q
+ 'R' -> Upper `hv'he` R
+ 'S' -> Upper `hv'he` S
+ 'T' -> Upper `hv'he` T
+ 'U' -> Upper `hv'he` U
+ 'V' -> Upper `hv'he` V
+ 'W' -> Upper `hv'he` W
+ 'X' -> Upper `hv'he` X
+ 'Y' -> Upper `hv'he` Y
+ 'Z' -> Upper `hv'he` Z
+ 'a' -> Lower `hv'he` A
+ 'b' -> Lower `hv'he` B
+ 'c' -> Lower `hv'he` C
+ 'd' -> Lower `hv'he` D
+ 'e' -> Lower `hv'he` E
+ 'f' -> Lower `hv'he` F
+ 'g' -> Lower `hv'he` G
+ 'h' -> Lower `hv'he` H
+ 'i' -> Lower `hv'he` I
+ 'j' -> Lower `hv'he` J
+ 'k' -> Lower `hv'he` K
+ 'l' -> Lower `hv'he` L
+ 'm' -> Lower `hv'he` M
+ 'n' -> Lower `hv'he` N
+ 'o' -> Lower `hv'he` O
+ 'p' -> Lower `hv'he` P
+ 'q' -> Lower `hv'he` Q
+ 'r' -> Lower `hv'he` R
+ 's' -> Lower `hv'he` S
+ 't' -> Lower `hv'he` T
+ 'u' -> Lower `hv'he` U
+ 'v' -> Lower `hv'he` V
+ 'w' -> Lower `hv'he` W
+ 'x' -> Lower `hv'he` X
  x -> error "Not a latin character!"
 
 caret_to_char :: Caret -> Char
@@ -102,202 +102,202 @@ ascii_to_char = is
  `la_` caret_to_char `ha` is
 
 glyph_to_ascii = \case
- ' ' -> Symbol `ha` Punctuate `hv` by Space
- '/' -> Symbol `ha` Punctuate `hv` by (Back `ha` Slash)
- '\\' -> Symbol `ha` Punctuate `hv` by Slash
- '(' -> Symbol `ha` Bracket `ha` Opened `li` Round
- ')' -> Symbol `ha` Bracket `ha` Closed `li` Round
- '{' -> Symbol `ha` Bracket `ha` Opened `li` Curly
- '}' -> Symbol `ha` Bracket `ha` Closed `li` Curly
- '<' -> Symbol `ha` Bracket `ha` Opened `li` Angle
- '>' -> Symbol `ha` Bracket `ha` Closed `li` Angle
- '[' -> Symbol `ha` Bracket `ha` Opened `li` Square
- ']' -> Symbol `ha` Bracket `ha` Closed `li` Square
- '"' -> Symbol `ha` Punctuate `hv` by Doublequote
- '\'' -> Symbol `ha` Punctuate `hv` by Singlequote
- '.' -> Symbol `ha` Punctuate `hv` by Period
- ',' -> Symbol `ha` Punctuate `hv` by Comma
- ';' -> Symbol `ha` Punctuate `hv` by Semicolon
- ':' -> Symbol `ha` Punctuate `hv` by Colon
- '!' -> Symbol `ha` Punctuate `hv` by Exclam
- '?' -> Symbol `ha` Punctuate `hv` by Question
- '#' -> Symbol `ha` Punctuate `hv` by Hash
- '$' -> Symbol `ha` Punctuate `hv` by Dollar
- '%' -> Symbol `ha` Punctuate `hv` by Percent
- '&' -> Symbol `ha` Punctuate `hv` by Ampersand
- '*' -> Symbol `ha` Punctuate `hv` by Asterisk
- '+' -> Symbol `ha` Punctuate `hv` by Plus
- '-' -> Symbol `ha` Punctuate `hv` by Hyphen
- '=' -> Symbol `ha` Punctuate `hv` by Equality
- '@' -> Symbol `ha` Punctuate `hv` by At
- '^' -> Symbol `ha` Punctuate `hv` by Circumflex
- '_' -> Symbol `ha` Punctuate `hv` by Underscore
- '`' -> Symbol `ha` Punctuate `hv` by Grave
- '|' -> Symbol `ha` Punctuate `hv` by Bar
- '~' -> Symbol `ha` Punctuate `hv` by Tilde
- 'A' -> Letter `ha` Upper `hv` by A
- 'B' -> Letter `ha` Upper `hv` by B
- 'C' -> Letter `ha` Upper `hv` by C
- 'D' -> Letter `ha` Upper `hv` by D
- 'E' -> Letter `ha` Upper `hv` by E
- 'F' -> Letter `ha` Upper `hv` by F
- 'G' -> Letter `ha` Upper `hv` by G
- 'H' -> Letter `ha` Upper `hv` by H
- 'I' -> Letter `ha` Upper `hv` by I
- 'J' -> Letter `ha` Upper `hv` by J
- 'K' -> Letter `ha` Upper `hv` by K
- 'L' -> Letter `ha` Upper `hv` by L
- 'M' -> Letter `ha` Upper `hv` by M
- 'N' -> Letter `ha` Upper `hv` by N
- 'O' -> Letter `ha` Upper `hv` by O
- 'P' -> Letter `ha` Upper `hv` by P
- 'Q' -> Letter `ha` Upper `hv` by Q
- 'R' -> Letter `ha` Upper `hv` by R
- 'S' -> Letter `ha` Upper `hv` by S
- 'T' -> Letter `ha` Upper `hv` by T
- 'U' -> Letter `ha` Upper `hv` by U
- 'V' -> Letter `ha` Upper `hv` by V
- 'W' -> Letter `ha` Upper `hv` by W
- 'X' -> Letter `ha` Upper `hv` by X
- 'Y' -> Letter `ha` Upper `hv` by Y
- 'Z' -> Letter `ha` Upper `hv` by Z
- 'a' -> Letter `ha` Lower `hv` by A
- 'b' -> Letter `ha` Lower `hv` by B
- 'c' -> Letter `ha` Lower `hv` by C
- 'd' -> Letter `ha` Lower `hv` by D
- 'e' -> Letter `ha` Lower `hv` by E
- 'f' -> Letter `ha` Lower `hv` by F
- 'g' -> Letter `ha` Lower `hv` by G
- 'h' -> Letter `ha` Lower `hv` by H
- 'i' -> Letter `ha` Lower `hv` by I
- 'j' -> Letter `ha` Lower `hv` by J
- 'k' -> Letter `ha` Lower `hv` by K
- 'l' -> Letter `ha` Lower `hv` by L
- 'm' -> Letter `ha` Lower `hv` by M
- 'n' -> Letter `ha` Lower `hv` by N
- 'o' -> Letter `ha` Lower `hv` by O
- 'p' -> Letter `ha` Lower `hv` by P
- 'q' -> Letter `ha` Lower `hv` by Q
- 'r' -> Letter `ha` Lower `hv` by R
- 's' -> Letter `ha` Lower `hv` by S
- 't' -> Letter `ha` Lower `hv` by T
- 'u' -> Letter `ha` Lower `hv` by U
- 'v' -> Letter `ha` Lower `hv` by V
- 'w' -> Letter `ha` Lower `hv` by W
- 'x' -> Letter `ha` Lower `hv` by X
- 'y' -> Letter `ha` Lower `hv` by Y
- 'z' -> Letter `ha` Lower `hv` by Z
- '0' -> Digit `hv` by Zero
- '1' -> Digit `hv` by One
- '2' -> Digit `hv` by Two
- '3' -> Digit `hv` by Three
- '4' -> Digit `hv` by Four
- '5' -> Digit `hv` by Five
- '6' -> Digit `hv` by Six
- '7' -> Digit `hv` by Seven
- '8' -> Digit `hv` by Eight
- '9' -> Digit `hv` by Nine
+ ' ' -> Symbol `ha` Punctuate `hv'he` Space
+ '/' -> Symbol `ha` Punctuate `hv'he` (Back `ha` Slash)
+ '\\' -> Symbol `ha` Punctuate `hv'he` Slash
+ '(' -> Symbol `ha` Bracket `ha` Opened `hv'he` Round
+ ')' -> Symbol `ha` Bracket `ha` Closed `hv'he` Round
+ '{' -> Symbol `ha` Bracket `ha` Opened `hv'he` Curly
+ '}' -> Symbol `ha` Bracket `ha` Closed `hv'he` Curly
+ '<' -> Symbol `ha` Bracket `ha` Opened `hv'he` Angle
+ '>' -> Symbol `ha` Bracket `ha` Closed `hv'he` Angle
+ '[' -> Symbol `ha` Bracket `ha` Opened `hv'he` Square
+ ']' -> Symbol `ha` Bracket `ha` Closed `hv'he` Square
+ '"' -> Symbol `ha` Punctuate `hv'he` Doublequote
+ '\'' -> Symbol `ha` Punctuate `hv'he` Singlequote
+ '.' -> Symbol `ha` Punctuate `hv'he` Period
+ ',' -> Symbol `ha` Punctuate `hv'he` Comma
+ ';' -> Symbol `ha` Punctuate `hv'he` Semicolon
+ ':' -> Symbol `ha` Punctuate `hv'he` Colon
+ '!' -> Symbol `ha` Punctuate `hv'he` Exclam
+ '?' -> Symbol `ha` Punctuate `hv'he` Question
+ '#' -> Symbol `ha` Punctuate `hv'he` Hash
+ '$' -> Symbol `ha` Punctuate `hv'he` Dollar
+ '%' -> Symbol `ha` Punctuate `hv'he` Percent
+ '&' -> Symbol `ha` Punctuate `hv'he` Ampersand
+ '*' -> Symbol `ha` Punctuate `hv'he` Asterisk
+ '+' -> Symbol `ha` Punctuate `hv'he` Plus
+ '-' -> Symbol `ha` Punctuate `hv'he` Hyphen
+ '=' -> Symbol `ha` Punctuate `hv'he` Equality
+ '@' -> Symbol `ha` Punctuate `hv'he` At
+ '^' -> Symbol `ha` Punctuate `hv'he` Circumflex
+ '_' -> Symbol `ha` Punctuate `hv'he` Underscore
+ '`' -> Symbol `ha` Punctuate `hv'he` Grave
+ '|' -> Symbol `ha` Punctuate `hv'he` Bar
+ '~' -> Symbol `ha` Punctuate `hv'he` Tilde
+ 'A' -> Letter `ha` Upper `hv'he` A
+ 'B' -> Letter `ha` Upper `hv'he` B
+ 'C' -> Letter `ha` Upper `hv'he` C
+ 'D' -> Letter `ha` Upper `hv'he` D
+ 'E' -> Letter `ha` Upper `hv'he` E
+ 'F' -> Letter `ha` Upper `hv'he` F
+ 'G' -> Letter `ha` Upper `hv'he` G
+ 'H' -> Letter `ha` Upper `hv'he` H
+ 'I' -> Letter `ha` Upper `hv'he` I
+ 'J' -> Letter `ha` Upper `hv'he` J
+ 'K' -> Letter `ha` Upper `hv'he` K
+ 'L' -> Letter `ha` Upper `hv'he` L
+ 'M' -> Letter `ha` Upper `hv'he` M
+ 'N' -> Letter `ha` Upper `hv'he` N
+ 'O' -> Letter `ha` Upper `hv'he` O
+ 'P' -> Letter `ha` Upper `hv'he` P
+ 'Q' -> Letter `ha` Upper `hv'he` Q
+ 'R' -> Letter `ha` Upper `hv'he` R
+ 'S' -> Letter `ha` Upper `hv'he` S
+ 'T' -> Letter `ha` Upper `hv'he` T
+ 'U' -> Letter `ha` Upper `hv'he` U
+ 'V' -> Letter `ha` Upper `hv'he` V
+ 'W' -> Letter `ha` Upper `hv'he` W
+ 'X' -> Letter `ha` Upper `hv'he` X
+ 'Y' -> Letter `ha` Upper `hv'he` Y
+ 'Z' -> Letter `ha` Upper `hv'he` Z
+ 'a' -> Letter `ha` Lower `hv'he` A
+ 'b' -> Letter `ha` Lower `hv'he` B
+ 'c' -> Letter `ha` Lower `hv'he` C
+ 'd' -> Letter `ha` Lower `hv'he` D
+ 'e' -> Letter `ha` Lower `hv'he` E
+ 'f' -> Letter `ha` Lower `hv'he` F
+ 'g' -> Letter `ha` Lower `hv'he` G
+ 'h' -> Letter `ha` Lower `hv'he` H
+ 'i' -> Letter `ha` Lower `hv'he` I
+ 'j' -> Letter `ha` Lower `hv'he` J
+ 'k' -> Letter `ha` Lower `hv'he` K
+ 'l' -> Letter `ha` Lower `hv'he` L
+ 'm' -> Letter `ha` Lower `hv'he` M
+ 'n' -> Letter `ha` Lower `hv'he` N
+ 'o' -> Letter `ha` Lower `hv'he` O
+ 'p' -> Letter `ha` Lower `hv'he` P
+ 'q' -> Letter `ha` Lower `hv'he` Q
+ 'r' -> Letter `ha` Lower `hv'he` R
+ 's' -> Letter `ha` Lower `hv'he` S
+ 't' -> Letter `ha` Lower `hv'he` T
+ 'u' -> Letter `ha` Lower `hv'he` U
+ 'v' -> Letter `ha` Lower `hv'he` V
+ 'w' -> Letter `ha` Lower `hv'he` W
+ 'x' -> Letter `ha` Lower `hv'he` X
+ 'y' -> Letter `ha` Lower `hv'he` Y
+ 'z' -> Letter `ha` Lower `hv'he` Z
+ '0' -> Digit `hv'he` Zero
+ '1' -> Digit `hv'he` One
+ '2' -> Digit `hv'he` Two
+ '3' -> Digit `hv'he` Three
+ '4' -> Digit `hv'he` Four
+ '5' -> Digit `hv'he` Five
+ '6' -> Digit `hv'he` Six
+ '7' -> Digit `hv'he` Seven
+ '8' -> Digit `hv'he` Eight
+ '9' -> Digit `hv'he` Nine
  _ -> error "Not a Glyph!"
 
 char_to_ascii = \case
- '\BS' -> Caret `hv` by (Back `ha` Space)
- '\HT' -> Caret `hv` by Tab
- '\LF' -> Caret `hv` by Newline
- '\ESC' -> Caret `hv` by Escape
- ' ' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Space
- '\DEL' -> Caret `hv` by Delete
- '/' -> Glyph `ha` Symbol `ha` Punctuate `hv` by (Back `ha` Slash)
- '\\' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Slash
- '(' -> Glyph `ha` Symbol `ha` Bracket `ha` Opened `li` Round
- ')' -> Glyph `ha` Symbol `ha` Bracket `ha` Closed `li` Round
- '{' -> Glyph `ha` Symbol `ha` Bracket `ha` Opened `li` Curly
- '}' -> Glyph `ha` Symbol `ha` Bracket `ha` Closed `li` Curly
- '<' -> Glyph `ha` Symbol `ha` Bracket `ha` Opened `li` Angle
- '>' -> Glyph `ha` Symbol `ha` Bracket `ha` Closed `li` Angle
- '[' -> Glyph `ha` Symbol `ha` Bracket `ha` Opened `li` Square
- ']' -> Glyph `ha` Symbol `ha` Bracket `ha` Closed `li` Square
- '"' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Doublequote
- '\'' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Singlequote
- '.' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Period
- ',' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Comma
- ';' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Semicolon
- ':' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Colon
- '!' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Exclam
- '?' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Question
- '#' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Hash
- '$' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Dollar
- '%' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Percent
- '&' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Ampersand
- '*' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Asterisk
- '+' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Plus
- '-' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Hyphen
- '=' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Equality
- '@' -> Glyph `ha` Symbol `ha` Punctuate `hv` by At
- '^' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Circumflex
- '_' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Underscore
- '`' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Grave
- '|' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Bar
- '~' -> Glyph `ha` Symbol `ha` Punctuate `hv` by Tilde
- 'A' -> Glyph `ha` Letter `ha` Upper `hv` by A
- 'B' -> Glyph `ha` Letter `ha` Upper `hv` by B
- 'C' -> Glyph `ha` Letter `ha` Upper `hv` by C
- 'D' -> Glyph `ha` Letter `ha` Upper `hv` by D
- 'E' -> Glyph `ha` Letter `ha` Upper `hv` by E
- 'F' -> Glyph `ha` Letter `ha` Upper `hv` by F
- 'G' -> Glyph `ha` Letter `ha` Upper `hv` by G
- 'H' -> Glyph `ha` Letter `ha` Upper `hv` by H
- 'I' -> Glyph `ha` Letter `ha` Upper `hv` by I
- 'J' -> Glyph `ha` Letter `ha` Upper `hv` by J
- 'K' -> Glyph `ha` Letter `ha` Upper `hv` by K
- 'L' -> Glyph `ha` Letter `ha` Upper `hv` by L
- 'M' -> Glyph `ha` Letter `ha` Upper `hv` by M
- 'N' -> Glyph `ha` Letter `ha` Upper `hv` by N
- 'O' -> Glyph `ha` Letter `ha` Upper `hv` by O
- 'P' -> Glyph `ha` Letter `ha` Upper `hv` by P
- 'Q' -> Glyph `ha` Letter `ha` Upper `hv` by Q
- 'R' -> Glyph `ha` Letter `ha` Upper `hv` by R
- 'S' -> Glyph `ha` Letter `ha` Upper `hv` by S
- 'T' -> Glyph `ha` Letter `ha` Upper `hv` by T
- 'U' -> Glyph `ha` Letter `ha` Upper `hv` by U
- 'V' -> Glyph `ha` Letter `ha` Upper `hv` by V
- 'W' -> Glyph `ha` Letter `ha` Upper `hv` by W
- 'X' -> Glyph `ha` Letter `ha` Upper `hv` by X
- 'Y' -> Glyph `ha` Letter `ha` Upper `hv` by Y
- 'Z' -> Glyph `ha` Letter `ha` Upper `hv` by Z
- 'a' -> Glyph `ha` Letter `ha` Lower `hv` by A
- 'b' -> Glyph `ha` Letter `ha` Lower `hv` by B
- 'c' -> Glyph `ha` Letter `ha` Lower `hv` by C
- 'd' -> Glyph `ha` Letter `ha` Lower `hv` by D
- 'e' -> Glyph `ha` Letter `ha` Lower `hv` by E
- 'f' -> Glyph `ha` Letter `ha` Lower `hv` by F
- 'g' -> Glyph `ha` Letter `ha` Lower `hv` by G
- 'h' -> Glyph `ha` Letter `ha` Lower `hv` by H
- 'i' -> Glyph `ha` Letter `ha` Lower `hv` by I
- 'j' -> Glyph `ha` Letter `ha` Lower `hv` by J
- 'k' -> Glyph `ha` Letter `ha` Lower `hv` by K
- 'l' -> Glyph `ha` Letter `ha` Lower `hv` by L
- 'm' -> Glyph `ha` Letter `ha` Lower `hv` by M
- 'n' -> Glyph `ha` Letter `ha` Lower `hv` by N
- 'o' -> Glyph `ha` Letter `ha` Lower `hv` by O
- 'p' -> Glyph `ha` Letter `ha` Lower `hv` by P
- 'q' -> Glyph `ha` Letter `ha` Lower `hv` by Q
- 'r' -> Glyph `ha` Letter `ha` Lower `hv` by R
- 's' -> Glyph `ha` Letter `ha` Lower `hv` by S
- 't' -> Glyph `ha` Letter `ha` Lower `hv` by T
- 'u' -> Glyph `ha` Letter `ha` Lower `hv` by U
- 'v' -> Glyph `ha` Letter `ha` Lower `hv` by V
- 'w' -> Glyph `ha` Letter `ha` Lower `hv` by W
- 'x' -> Glyph `ha` Letter `ha` Lower `hv` by X
- 'y' -> Glyph `ha` Letter `ha` Lower `hv` by Y
- 'z' -> Glyph `ha` Letter `ha` Lower `hv` by Z
- '0' -> Glyph `ha` Digit `hv` by Zero
- '1' -> Glyph `ha` Digit `hv` by One
- '2' -> Glyph `ha` Digit `hv` by Two
- '3' -> Glyph `ha` Digit `hv` by Three
- '4' -> Glyph `ha` Digit `hv` by Four
- '5' -> Glyph `ha` Digit `hv` by Five
- '6' -> Glyph `ha` Digit `hv` by Six
- '7' -> Glyph `ha` Digit `hv` by Seven
- '8' -> Glyph `ha` Digit `hv` by Eight
- '9' -> Glyph `ha` Digit `hv` by Nine
+ '\BS' -> Caret `hv'he` (Back `ha` Space)
+ '\HT' -> Caret `hv'he` Tab
+ '\LF' -> Caret `hv'he` Newline
+ '\ESC' -> Caret `hv'he` Escape
+ ' ' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Space
+ '\DEL' -> Caret `hv'he` Delete
+ '/' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` (Back `ha` Slash)
+ '\\' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Slash
+ '(' -> Glyph `ha` Symbol `ha` Bracket `ha` Opened `hv'he` Round
+ ')' -> Glyph `ha` Symbol `ha` Bracket `ha` Closed `hv'he` Round
+ '{' -> Glyph `ha` Symbol `ha` Bracket `ha` Opened `hv'he` Curly
+ '}' -> Glyph `ha` Symbol `ha` Bracket `ha` Closed `hv'he` Curly
+ '<' -> Glyph `ha` Symbol `ha` Bracket `ha` Opened `hv'he` Angle
+ '>' -> Glyph `ha` Symbol `ha` Bracket `ha` Closed `hv'he` Angle
+ '[' -> Glyph `ha` Symbol `ha` Bracket `ha` Opened `hv'he` Square
+ ']' -> Glyph `ha` Symbol `ha` Bracket `ha` Closed `hv'he` Square
+ '"' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Doublequote
+ '\'' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Singlequote
+ '.' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Period
+ ',' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Comma
+ ';' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Semicolon
+ ':' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Colon
+ '!' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Exclam
+ '?' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Question
+ '#' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Hash
+ '$' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Dollar
+ '%' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Percent
+ '&' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Ampersand
+ '*' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Asterisk
+ '+' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Plus
+ '-' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Hyphen
+ '=' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Equality
+ '@' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` At
+ '^' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Circumflex
+ '_' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Underscore
+ '`' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Grave
+ '|' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Bar
+ '~' -> Glyph `ha` Symbol `ha` Punctuate `hv'he` Tilde
+ 'A' -> Glyph `ha` Letter `ha` Upper `hv'he` A
+ 'B' -> Glyph `ha` Letter `ha` Upper `hv'he` B
+ 'C' -> Glyph `ha` Letter `ha` Upper `hv'he` C
+ 'D' -> Glyph `ha` Letter `ha` Upper `hv'he` D
+ 'E' -> Glyph `ha` Letter `ha` Upper `hv'he` E
+ 'F' -> Glyph `ha` Letter `ha` Upper `hv'he` F
+ 'G' -> Glyph `ha` Letter `ha` Upper `hv'he` G
+ 'H' -> Glyph `ha` Letter `ha` Upper `hv'he` H
+ 'I' -> Glyph `ha` Letter `ha` Upper `hv'he` I
+ 'J' -> Glyph `ha` Letter `ha` Upper `hv'he` J
+ 'K' -> Glyph `ha` Letter `ha` Upper `hv'he` K
+ 'L' -> Glyph `ha` Letter `ha` Upper `hv'he` L
+ 'M' -> Glyph `ha` Letter `ha` Upper `hv'he` M
+ 'N' -> Glyph `ha` Letter `ha` Upper `hv'he` N
+ 'O' -> Glyph `ha` Letter `ha` Upper `hv'he` O
+ 'P' -> Glyph `ha` Letter `ha` Upper `hv'he` P
+ 'Q' -> Glyph `ha` Letter `ha` Upper `hv'he` Q
+ 'R' -> Glyph `ha` Letter `ha` Upper `hv'he` R
+ 'S' -> Glyph `ha` Letter `ha` Upper `hv'he` S
+ 'T' -> Glyph `ha` Letter `ha` Upper `hv'he` T
+ 'U' -> Glyph `ha` Letter `ha` Upper `hv'he` U
+ 'V' -> Glyph `ha` Letter `ha` Upper `hv'he` V
+ 'W' -> Glyph `ha` Letter `ha` Upper `hv'he` W
+ 'X' -> Glyph `ha` Letter `ha` Upper `hv'he` X
+ 'Y' -> Glyph `ha` Letter `ha` Upper `hv'he` Y
+ 'Z' -> Glyph `ha` Letter `ha` Upper `hv'he` Z
+ 'a' -> Glyph `ha` Letter `ha` Lower `hv'he` A
+ 'b' -> Glyph `ha` Letter `ha` Lower `hv'he` B
+ 'c' -> Glyph `ha` Letter `ha` Lower `hv'he` C
+ 'd' -> Glyph `ha` Letter `ha` Lower `hv'he` D
+ 'e' -> Glyph `ha` Letter `ha` Lower `hv'he` E
+ 'f' -> Glyph `ha` Letter `ha` Lower `hv'he` F
+ 'g' -> Glyph `ha` Letter `ha` Lower `hv'he` G
+ 'h' -> Glyph `ha` Letter `ha` Lower `hv'he` H
+ 'i' -> Glyph `ha` Letter `ha` Lower `hv'he` I
+ 'j' -> Glyph `ha` Letter `ha` Lower `hv'he` J
+ 'k' -> Glyph `ha` Letter `ha` Lower `hv'he` K
+ 'l' -> Glyph `ha` Letter `ha` Lower `hv'he` L
+ 'm' -> Glyph `ha` Letter `ha` Lower `hv'he` M
+ 'n' -> Glyph `ha` Letter `ha` Lower `hv'he` N
+ 'o' -> Glyph `ha` Letter `ha` Lower `hv'he` O
+ 'p' -> Glyph `ha` Letter `ha` Lower `hv'he` P
+ 'q' -> Glyph `ha` Letter `ha` Lower `hv'he` Q
+ 'r' -> Glyph `ha` Letter `ha` Lower `hv'he` R
+ 's' -> Glyph `ha` Letter `ha` Lower `hv'he` S
+ 't' -> Glyph `ha` Letter `ha` Lower `hv'he` T
+ 'u' -> Glyph `ha` Letter `ha` Lower `hv'he` U
+ 'v' -> Glyph `ha` Letter `ha` Lower `hv'he` V
+ 'w' -> Glyph `ha` Letter `ha` Lower `hv'he` W
+ 'x' -> Glyph `ha` Letter `ha` Lower `hv'he` X
+ 'y' -> Glyph `ha` Letter `ha` Lower `hv'he` Y
+ 'z' -> Glyph `ha` Letter `ha` Lower `hv'he` Z
+ '0' -> Glyph `ha` Digit `hv'he` Zero
+ '1' -> Glyph `ha` Digit `hv'he` One
+ '2' -> Glyph `ha` Digit `hv'he` Two
+ '3' -> Glyph `ha` Digit `hv'he` Three
+ '4' -> Glyph `ha` Digit `hv'he` Four
+ '5' -> Glyph `ha` Digit `hv'he` Five
+ '6' -> Glyph `ha` Digit `hv'he` Six
+ '7' -> Glyph `ha` Digit `hv'he` Seven
+ '8' -> Glyph `ha` Digit `hv'he` Eight
+ '9' -> Glyph `ha` Digit `hv'he` Nine
  _ -> error "Not ASCII!"
