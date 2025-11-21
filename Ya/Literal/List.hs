@@ -56,17 +56,20 @@ instance IsList (List `T'TT'I` Along k `T'I_` i) where
   worker ((k,c) : []) = Item (c `lu` k `yi` Along) `ha` Last `hv` Unit
   worker ((k,c) : kcs) = Item (c `lu` k `yi` Along) `ha` Next `hv` worker kcs
 
+-- instance IsList (Construction List i) where
+ -- type Item (Construction List i) = (i, Tree (List i))
+
 integer :: Integer -> Nonempty List Digit
 integer = show `ho` fromList `ho'yo` digit where
 
- digit '0' = by Zero
- digit '1' = by One
- digit '2' = by Two
- digit '3' = by Three
- digit '4' = by Four
- digit '5' = by Five
- digit '6' = by Six
- digit '7' = by Seven
- digit '8' = by Eight
- digit '9' = by Nine
+ digit '0' = unwrap Zero
+ digit '1' = unwrap One
+ digit '2' = unwrap Two
+ digit '3' = unwrap Three
+ digit '4' = unwrap Four
+ digit '5' = unwrap Five
+ digit '6' = unwrap Six
+ digit '7' = unwrap Seven
+ digit '8' = unwrap Eight
+ digit '9' = unwrap Nine
  digit _ = error "Not a digit!"
