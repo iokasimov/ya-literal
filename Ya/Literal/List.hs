@@ -32,16 +32,16 @@ instance IsList (List i) where
   `he'he'hv___` []
   `yi__` that @[_]
 
-instance IsList (Shafted List i) where
- type Item (Shafted List i) = [i]
+instance IsList (Twice `T'TT'I` List `T'I_` i) where
+ type Item (Twice `T'TT'I` List `T'I_` i) = [i]
  fromList [sx,xs] = fromList @(List i) (reverse sx) `lu` fromList @(List i) xs
 
-instance IsList ((Alone `P'T'I'TT'I` Shafted List) i) where
- type Item ((Alone `P'T'I'TT'I` Shafted List) i) = [i]
+instance IsList ((Alone `P'T'I'TT'I` Twice `T'TT'I` List) i) where
+ type Item ((Alone `P'T'I'TT'I` Twice `T'TT'I` List) i) = [i]
  fromList [sx,[x],xs] = Alone x `lu` (fromList @(List i) (reverse sx) `lu` fromList @(List i) xs)
 
-instance IsList ((List `P'T'I'TT'I` Shafted List) i) where
- type Item ((List `P'T'I'TT'I` Shafted List) i) = [i]
+instance IsList ((List `P'T'I'TT'I` Twice `T'TT'I` List) i) where
+ type Item ((List `P'T'I'TT'I` Twice `T'TT'I` List) i) = [i]
  fromList [sx,x,xs] = T'TT'I'TTT'I (fromList @(List i) x `lu` (fromList @(List i) (reverse sx) `lu` fromList @(List i) xs))
 
 instance IsList (Construction Optional `T'TT'I` Along k `T'I_` i) where
