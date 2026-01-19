@@ -2,7 +2,6 @@ module Ya.Literal.String where
 
 import Ya
 import Ya.ASCII
-import Ya.World
 
 import "base" GHC.Err (error)
 import "base" Data.Char (Char)

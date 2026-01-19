@@ -2,7 +2,6 @@ module Ya.Literal.List where
 
 import Ya
 import Ya.ASCII
-import Ya.World
 
 import "base" GHC.IsList (IsList (Item, toList, fromList))
 import "base" GHC.Integer (Integer)
