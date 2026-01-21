@@ -51,4 +51,4 @@ instance IsString (Construction Optional Unit) where
   worker (_ : []) = Item `hc` Unit `ha` Last `hc` Unit
   worker (_ : cs) = Item `hc` Unit `ha` Next `hc` worker cs
 
-char_to_ascii_with_error x = Empty `hu` error ('<' : x : "> is not ASCII!") `hs` is `hc_` char_to_ascii x
+char_to_ascii_with_error x = Empty `hu` error ('<' : x : "> is not ASCII!") `has` is `hc_` char_to_ascii x

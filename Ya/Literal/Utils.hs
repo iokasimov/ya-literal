@@ -61,43 +61,43 @@ char_to_letter = \case
  x -> error ('<' : x : "> is not a latin character!")
 
 caret_to_char :: Caret -> Char
-caret_to_char = is `hu` '\HT' `hs` is `hu` '\LF' `hs` is `hu` '\ESC' `hs` is `hu` '\BS' `hs` is `hu` '\DEL'
+caret_to_char = is `hu` '\HT' `has` is `hu` '\LF' `has` is `hu` '\ESC' `has` is `hu` '\BS' `has` is `hu` '\DEL'
 
 bracket_to_char :: Bracket -> Char
-bracket_to_char = is `hu` '(' `hs` is `hu` '{' `hs` is `hu` '<' `hs` is `hu` '['
-              `hs_` is `hu` ')' `hs` is `hu` '}' `hs` is `hu` '>' `hs` is `hu` ']'
+bracket_to_char = is `hu` '(' `has` is `hu` '{' `has` is `hu` '<' `has` is `hu` '['
+              `has_` is `hu` ')' `has` is `hu` '}' `has` is `hu` '>' `has` is `hu` ']'
 
 punctuation_to_char :: Punctuate -> Char
-punctuation_to_char = is `hu` '\"' `hs` is `hu` '\'' `hs` is `hu` '#' `hs` is `hu` '=' `hs` is `hu` '-' `hs` is `hu` '@'
- `hs` is `hu` '^' `hs` is `hu` '_' `hs` is `hu` '`' `hs` is `hu` '|' `hs` is `hu` '~'
- `hs` is `hu` '+' `hs` is `hu` '*' `hs` is `hu` '%' `hs` is `hu` '&' `hs` is `hu` '$' `hs` is `hu` '\\' `hs` is `hu` '/'
- `hs` is `hu` '.' `hs` is `hu` ',' `hs` is `hu` ';' `hs` is `hu` ':' `hs` is `hu` '!' `hs` is `hu` '?' `hs` is `hu` ' '
+punctuation_to_char = is `hu` '\"' `has` is `hu` '\'' `has` is `hu` '#' `has` is `hu` '=' `has` is `hu` '-' `has` is `hu` '@'
+ `has` is `hu` '^' `has` is `hu` '_' `has` is `hu` '`' `has` is `hu` '|' `has` is `hu` '~'
+ `has` is `hu` '+' `has` is `hu` '*' `has` is `hu` '%' `has` is `hu` '&' `has` is `hu` '$' `has` is `hu` '\\' `has` is `hu` '/'
+ `has` is `hu` '.' `has` is `hu` ',' `has` is `hu` ';' `has` is `hu` ':' `has` is `hu` '!' `has` is `hu` '?' `has` is `hu` ' '
 
 upper_latin_to_char :: Latin -> Char
-upper_latin_to_char = is `hu` 'A' `hs` is `hu` 'B' `hs` is `hu` 'C' `hs` is `hu` 'D' `hs` is `hu` 'E' `hs` is `hu` 'F'
- `hs` is `hu` 'G' `hs` is `hu` 'H' `hs` is `hu` 'I' `hs` is `hu` 'J' `hs` is `hu` 'K' `hs` is `hu` 'L'
- `hs` is `hu` 'M' `hs` is `hu` 'N' `hs` is `hu` 'O' `hs` is `hu` 'P' `hs` is `hu` 'Q' `hs` is `hu` 'R'
- `hs` is `hu` 'S' `hs` is `hu` 'T' `hs` is `hu` 'U' `hs` is `hu` 'V' `hs` is `hu` 'W' `hs` is `hu` 'X'
- `hs` is `hu` 'Y' `hs` is `hu` 'Z'
+upper_latin_to_char = is `hu` 'A' `has` is `hu` 'B' `has` is `hu` 'C' `has` is `hu` 'D' `has` is `hu` 'E' `has` is `hu` 'F'
+ `has` is `hu` 'G' `has` is `hu` 'H' `has` is `hu` 'I' `has` is `hu` 'J' `has` is `hu` 'K' `has` is `hu` 'L'
+ `has` is `hu` 'M' `has` is `hu` 'N' `has` is `hu` 'O' `has` is `hu` 'P' `has` is `hu` 'Q' `has` is `hu` 'R'
+ `has` is `hu` 'S' `has` is `hu` 'T' `has` is `hu` 'U' `has` is `hu` 'V' `has` is `hu` 'W' `has` is `hu` 'X'
+ `has` is `hu` 'Y' `has` is `hu` 'Z'
 
 lower_latin_to_char :: Latin -> Char
-lower_latin_to_char = is `hu` 'a' `hs` is `hu` 'b' `hs` is `hu` 'c' `hs` is `hu` 'd' `hs` is `hu` 'e' `hs` is `hu` 'f'
- `hs` is `hu` 'g' `hs` is `hu` 'h' `hs` is `hu` 'i' `hs` is `hu` 'j' `hs` is `hu` 'k' `hs` is `hu` 'l'
- `hs` is `hu` 'm' `hs` is `hu` 'n' `hs` is `hu` 'o' `hs` is `hu` 'p' `hs` is `hu` 'q' `hs` is `hu` 'r'
- `hs` is `hu` 's' `hs` is `hu` 't' `hs` is `hu` 'u' `hs` is `hu` 'v' `hs` is `hu` 'w' `hs` is `hu` 'x'
- `hs` is `hu` 'y' `hs` is `hu` 'z'
+lower_latin_to_char = is `hu` 'a' `has` is `hu` 'b' `has` is `hu` 'c' `has` is `hu` 'd' `has` is `hu` 'e' `has` is `hu` 'f'
+ `has` is `hu` 'g' `has` is `hu` 'h' `has` is `hu` 'i' `has` is `hu` 'j' `has` is `hu` 'k' `has` is `hu` 'l'
+ `has` is `hu` 'm' `has` is `hu` 'n' `has` is `hu` 'o' `has` is `hu` 'p' `has` is `hu` 'q' `has` is `hu` 'r'
+ `has` is `hu` 's' `has` is `hu` 't' `has` is `hu` 'u' `has` is `hu` 'v' `has` is `hu` 'w' `has` is `hu` 'x'
+ `has` is `hu` 'y' `has` is `hu` 'z'
 
 digit_to_char :: Digit -> Char
-digit_to_char = is `hu` '0' `hs` is `hu` '1' `hs` is `hu` '2' `hs` is `hu` '3' `hs` is `hu` '4' `hs` is `hu` '5' `hs` is `hu` '6' `hs` is `hu` '7' `hs` is `hu` '8' `hs` is `hu` '9'
+digit_to_char = is `hu` '0' `has` is `hu` '1' `has` is `hu` '2' `has` is `hu` '3' `has` is `hu` '4' `has` is `hu` '5' `has` is `hu` '6' `has` is `hu` '7' `has` is `hu` '8' `has` is `hu` '9'
 
 ascii_to_char :: ASCII -> Char
 ascii_to_char = is
  `hc_` lower_latin_to_char
-  `hs` upper_latin_to_char
- `hs_` digit_to_char `ha` is
- `hs_` bracket_to_char `ha` is
-  `hs` punctuation_to_char `ha` is
- `hs_` caret_to_char `ha` is
+  `has` upper_latin_to_char
+ `has_` digit_to_char `ha` is
+ `has_` bracket_to_char `ha` is
+  `has` punctuation_to_char `ha` is
+ `has_` caret_to_char `ha` is
 
 glyph_to_ascii = \case
  ' ' -> Symbol `ha` Punctuate `hc'st` Space
