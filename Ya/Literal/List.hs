@@ -60,14 +60,14 @@ instance IsList (List `T'TT'I` Along k `T'I_` i) where
 integer :: Integer -> Nonempty List Digit
 integer = show `ho` fromList `ho'yo` digit where
 
- digit '0' = super Zero
- digit '1' = super One
- digit '2' = super Two
- digit '3' = super Three
- digit '4' = super Four
- digit '5' = super Five
- digit '6' = super Six
- digit '7' = super Seven
- digit '8' = super Eight
- digit '9' = super Nine
+ digit '0' = supertype Zero
+ digit '1' = supertype One
+ digit '2' = supertype Two
+ digit '3' = supertype Three
+ digit '4' = supertype Four
+ digit '5' = supertype Five
+ digit '6' = supertype Six
+ digit '7' = supertype Seven
+ digit '8' = supertype Eight
+ digit '9' = supertype Nine
  digit _ = error "Not a digit!"

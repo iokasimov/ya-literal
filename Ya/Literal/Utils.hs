@@ -298,4 +298,4 @@ char_to_ascii = \case
  '7' -> Exist `ha` Glyph `ha` Digit `hc'st` Seven
  '8' -> Exist `ha` Glyph `ha` Digit `hc'st` Eight
  '9' -> Exist `ha` Glyph `ha` Digit `hc'st` Nine
- _ -> super Empty
+ _ -> supertype Empty
