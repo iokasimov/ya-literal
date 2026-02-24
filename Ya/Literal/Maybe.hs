@@ -6,5 +6,5 @@ import "base" GHC.IsList (IsList (Item, toList, fromList))
 
 instance IsList (Maybe i) where
  type Item (Maybe i) = i
- fromList [] = Empty `hc` Unit
- fromList [x] = Exist `hc` x
+ fromList [] = Empty `har` Unit
+ fromList [x] = Exist `har` x

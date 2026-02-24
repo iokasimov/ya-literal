@@ -8,56 +8,56 @@ import "base" GHC.Err (error)
 
 char_to_letter :: Char -> Letter
 char_to_letter = \case
- 'A' -> Upper `hc'st` A
- 'B' -> Upper `hc'st` B
- 'C' -> Upper `hc'st` C
- 'D' -> Upper `hc'st` D
- 'E' -> Upper `hc'st` E
- 'F' -> Upper `hc'st` F
- 'G' -> Upper `hc'st` G
- 'H' -> Upper `hc'st` H
- 'I' -> Upper `hc'st` I
- 'J' -> Upper `hc'st` J
- 'K' -> Upper `hc'st` K
- 'L' -> Upper `hc'st` L
- 'M' -> Upper `hc'st` M
- 'N' -> Upper `hc'st` N
- 'O' -> Upper `hc'st` O
- 'P' -> Upper `hc'st` P
- 'Q' -> Upper `hc'st` Q
- 'R' -> Upper `hc'st` R
- 'S' -> Upper `hc'st` S
- 'T' -> Upper `hc'st` T
- 'U' -> Upper `hc'st` U
- 'V' -> Upper `hc'st` V
- 'W' -> Upper `hc'st` W
- 'X' -> Upper `hc'st` X
- 'Y' -> Upper `hc'st` Y
- 'Z' -> Upper `hc'st` Z
- 'a' -> Lower `hc'st` A
- 'b' -> Lower `hc'st` B
- 'c' -> Lower `hc'st` C
- 'd' -> Lower `hc'st` D
- 'e' -> Lower `hc'st` E
- 'f' -> Lower `hc'st` F
- 'g' -> Lower `hc'st` G
- 'h' -> Lower `hc'st` H
- 'i' -> Lower `hc'st` I
- 'j' -> Lower `hc'st` J
- 'k' -> Lower `hc'st` K
- 'l' -> Lower `hc'st` L
- 'm' -> Lower `hc'st` M
- 'n' -> Lower `hc'st` N
- 'o' -> Lower `hc'st` O
- 'p' -> Lower `hc'st` P
- 'q' -> Lower `hc'st` Q
- 'r' -> Lower `hc'st` R
- 's' -> Lower `hc'st` S
- 't' -> Lower `hc'st` T
- 'u' -> Lower `hc'st` U
- 'v' -> Lower `hc'st` V
- 'w' -> Lower `hc'st` W
- 'x' -> Lower `hc'st` X
+ 'A' -> Upper `har'st` A
+ 'B' -> Upper `har'st` B
+ 'C' -> Upper `har'st` C
+ 'D' -> Upper `har'st` D
+ 'E' -> Upper `har'st` E
+ 'F' -> Upper `har'st` F
+ 'G' -> Upper `har'st` G
+ 'H' -> Upper `har'st` H
+ 'I' -> Upper `har'st` I
+ 'J' -> Upper `har'st` J
+ 'K' -> Upper `har'st` K
+ 'L' -> Upper `har'st` L
+ 'M' -> Upper `har'st` M
+ 'N' -> Upper `har'st` N
+ 'O' -> Upper `har'st` O
+ 'P' -> Upper `har'st` P
+ 'Q' -> Upper `har'st` Q
+ 'R' -> Upper `har'st` R
+ 'S' -> Upper `har'st` S
+ 'T' -> Upper `har'st` T
+ 'U' -> Upper `har'st` U
+ 'V' -> Upper `har'st` V
+ 'W' -> Upper `har'st` W
+ 'X' -> Upper `har'st` X
+ 'Y' -> Upper `har'st` Y
+ 'Z' -> Upper `har'st` Z
+ 'a' -> Lower `har'st` A
+ 'b' -> Lower `har'st` B
+ 'c' -> Lower `har'st` C
+ 'd' -> Lower `har'st` D
+ 'e' -> Lower `har'st` E
+ 'f' -> Lower `har'st` F
+ 'g' -> Lower `har'st` G
+ 'h' -> Lower `har'st` H
+ 'i' -> Lower `har'st` I
+ 'j' -> Lower `har'st` J
+ 'k' -> Lower `har'st` K
+ 'l' -> Lower `har'st` L
+ 'm' -> Lower `har'st` M
+ 'n' -> Lower `har'st` N
+ 'o' -> Lower `har'st` O
+ 'p' -> Lower `har'st` P
+ 'q' -> Lower `har'st` Q
+ 'r' -> Lower `har'st` R
+ 's' -> Lower `har'st` S
+ 't' -> Lower `har'st` T
+ 'u' -> Lower `har'st` U
+ 'v' -> Lower `har'st` V
+ 'w' -> Lower `har'st` W
+ 'x' -> Lower `har'st` X
  x -> error ('<' : x : "> is not a latin character!")
 
 caret_to_char :: Caret -> Char
@@ -92,7 +92,7 @@ digit_to_char = is `hu` '0' `has` is `hu` '1' `has` is `hu` '2' `has` is `hu` '3
 
 ascii_to_char :: ASCII -> Char
 ascii_to_char = is
- `hc_` lower_latin_to_char
+ `har` lower_latin_to_char
   `has` upper_latin_to_char
  `has_` digit_to_char `ha` is
  `has_` bracket_to_char `ha` is
@@ -100,202 +100,202 @@ ascii_to_char = is
  `has_` caret_to_char `ha` is
 
 glyph_to_ascii = \case
- ' ' -> Symbol `ha` Punctuate `hc'st` Space
- '/' -> Symbol `ha` Punctuate `hc'st` (Back `ha` Slash)
- '\\' -> Symbol `ha` Punctuate `hc'st` Slash
- '(' -> Symbol `ha` Bracket `ha` Opened `hc'st` Round
- ')' -> Symbol `ha` Bracket `ha` Closed `hc'st` Round
- '{' -> Symbol `ha` Bracket `ha` Opened `hc'st` Curly
- '}' -> Symbol `ha` Bracket `ha` Closed `hc'st` Curly
- '<' -> Symbol `ha` Bracket `ha` Opened `hc'st` Angle
- '>' -> Symbol `ha` Bracket `ha` Closed `hc'st` Angle
- '[' -> Symbol `ha` Bracket `ha` Opened `hc'st` Square
- ']' -> Symbol `ha` Bracket `ha` Closed `hc'st` Square
- '"' -> Symbol `ha` Punctuate `hc'st` Doublequote
- '\'' -> Symbol `ha` Punctuate `hc'st` Singlequote
- '.' -> Symbol `ha` Punctuate `hc'st` Period
- ',' -> Symbol `ha` Punctuate `hc'st` Comma
- ';' -> Symbol `ha` Punctuate `hc'st` Semicolon
- ':' -> Symbol `ha` Punctuate `hc'st` Colon
- '!' -> Symbol `ha` Punctuate `hc'st` Exclam
- '?' -> Symbol `ha` Punctuate `hc'st` Question
- '#' -> Symbol `ha` Punctuate `hc'st` Hash
- '$' -> Symbol `ha` Punctuate `hc'st` Dollar
- '%' -> Symbol `ha` Punctuate `hc'st` Percent
- '&' -> Symbol `ha` Punctuate `hc'st` Ampersand
- '*' -> Symbol `ha` Punctuate `hc'st` Asterisk
- '+' -> Symbol `ha` Punctuate `hc'st` Plus
- '-' -> Symbol `ha` Punctuate `hc'st` Hyphen
- '=' -> Symbol `ha` Punctuate `hc'st` Equality
- '@' -> Symbol `ha` Punctuate `hc'st` At
- '^' -> Symbol `ha` Punctuate `hc'st` Circumflex
- '_' -> Symbol `ha` Punctuate `hc'st` Underscore
- '`' -> Symbol `ha` Punctuate `hc'st` Grave
- '|' -> Symbol `ha` Punctuate `hc'st` Bar
- '~' -> Symbol `ha` Punctuate `hc'st` Tilde
- 'A' -> Letter `ha` Upper `hc'st` A
- 'B' -> Letter `ha` Upper `hc'st` B
- 'C' -> Letter `ha` Upper `hc'st` C
- 'D' -> Letter `ha` Upper `hc'st` D
- 'E' -> Letter `ha` Upper `hc'st` E
- 'F' -> Letter `ha` Upper `hc'st` F
- 'G' -> Letter `ha` Upper `hc'st` G
- 'H' -> Letter `ha` Upper `hc'st` H
- 'I' -> Letter `ha` Upper `hc'st` I
- 'J' -> Letter `ha` Upper `hc'st` J
- 'K' -> Letter `ha` Upper `hc'st` K
- 'L' -> Letter `ha` Upper `hc'st` L
- 'M' -> Letter `ha` Upper `hc'st` M
- 'N' -> Letter `ha` Upper `hc'st` N
- 'O' -> Letter `ha` Upper `hc'st` O
- 'P' -> Letter `ha` Upper `hc'st` P
- 'Q' -> Letter `ha` Upper `hc'st` Q
- 'R' -> Letter `ha` Upper `hc'st` R
- 'S' -> Letter `ha` Upper `hc'st` S
- 'T' -> Letter `ha` Upper `hc'st` T
- 'U' -> Letter `ha` Upper `hc'st` U
- 'V' -> Letter `ha` Upper `hc'st` V
- 'W' -> Letter `ha` Upper `hc'st` W
- 'X' -> Letter `ha` Upper `hc'st` X
- 'Y' -> Letter `ha` Upper `hc'st` Y
- 'Z' -> Letter `ha` Upper `hc'st` Z
- 'a' -> Letter `ha` Lower `hc'st` A
- 'b' -> Letter `ha` Lower `hc'st` B
- 'c' -> Letter `ha` Lower `hc'st` C
- 'd' -> Letter `ha` Lower `hc'st` D
- 'e' -> Letter `ha` Lower `hc'st` E
- 'f' -> Letter `ha` Lower `hc'st` F
- 'g' -> Letter `ha` Lower `hc'st` G
- 'h' -> Letter `ha` Lower `hc'st` H
- 'i' -> Letter `ha` Lower `hc'st` I
- 'j' -> Letter `ha` Lower `hc'st` J
- 'k' -> Letter `ha` Lower `hc'st` K
- 'l' -> Letter `ha` Lower `hc'st` L
- 'm' -> Letter `ha` Lower `hc'st` M
- 'n' -> Letter `ha` Lower `hc'st` N
- 'o' -> Letter `ha` Lower `hc'st` O
- 'p' -> Letter `ha` Lower `hc'st` P
- 'q' -> Letter `ha` Lower `hc'st` Q
- 'r' -> Letter `ha` Lower `hc'st` R
- 's' -> Letter `ha` Lower `hc'st` S
- 't' -> Letter `ha` Lower `hc'st` T
- 'u' -> Letter `ha` Lower `hc'st` U
- 'v' -> Letter `ha` Lower `hc'st` V
- 'w' -> Letter `ha` Lower `hc'st` W
- 'x' -> Letter `ha` Lower `hc'st` X
- 'y' -> Letter `ha` Lower `hc'st` Y
- 'z' -> Letter `ha` Lower `hc'st` Z
- '0' -> Digit `hc'st` Zero
- '1' -> Digit `hc'st` One
- '2' -> Digit `hc'st` Two
- '3' -> Digit `hc'st` Three
- '4' -> Digit `hc'st` Four
- '5' -> Digit `hc'st` Five
- '6' -> Digit `hc'st` Six
- '7' -> Digit `hc'st` Seven
- '8' -> Digit `hc'st` Eight
- '9' -> Digit `hc'st` Nine
+ ' ' -> Symbol `ha` Punctuate `har'st` Space
+ '/' -> Symbol `ha` Punctuate `har'st` (Back `ha` Slash)
+ '\\' -> Symbol `ha` Punctuate `har'st` Slash
+ '(' -> Symbol `ha` Bracket `ha` Opened `har'st` Round
+ ')' -> Symbol `ha` Bracket `ha` Closed `har'st` Round
+ '{' -> Symbol `ha` Bracket `ha` Opened `har'st` Curly
+ '}' -> Symbol `ha` Bracket `ha` Closed `har'st` Curly
+ '<' -> Symbol `ha` Bracket `ha` Opened `har'st` Angle
+ '>' -> Symbol `ha` Bracket `ha` Closed `har'st` Angle
+ '[' -> Symbol `ha` Bracket `ha` Opened `har'st` Square
+ ']' -> Symbol `ha` Bracket `ha` Closed `har'st` Square
+ '"' -> Symbol `ha` Punctuate `har'st` Doublequote
+ '\'' -> Symbol `ha` Punctuate `har'st` Singlequote
+ '.' -> Symbol `ha` Punctuate `har'st` Period
+ ',' -> Symbol `ha` Punctuate `har'st` Comma
+ ';' -> Symbol `ha` Punctuate `har'st` Semicolon
+ ':' -> Symbol `ha` Punctuate `har'st` Colon
+ '!' -> Symbol `ha` Punctuate `har'st` Exclam
+ '?' -> Symbol `ha` Punctuate `har'st` Question
+ '#' -> Symbol `ha` Punctuate `har'st` Hash
+ '$' -> Symbol `ha` Punctuate `har'st` Dollar
+ '%' -> Symbol `ha` Punctuate `har'st` Percent
+ '&' -> Symbol `ha` Punctuate `har'st` Ampersand
+ '*' -> Symbol `ha` Punctuate `har'st` Asterisk
+ '+' -> Symbol `ha` Punctuate `har'st` Plus
+ '-' -> Symbol `ha` Punctuate `har'st` Hyphen
+ '=' -> Symbol `ha` Punctuate `har'st` Equality
+ '@' -> Symbol `ha` Punctuate `har'st` At
+ '^' -> Symbol `ha` Punctuate `har'st` Circumflex
+ '_' -> Symbol `ha` Punctuate `har'st` Underscore
+ '`' -> Symbol `ha` Punctuate `har'st` Grave
+ '|' -> Symbol `ha` Punctuate `har'st` Bar
+ '~' -> Symbol `ha` Punctuate `har'st` Tilde
+ 'A' -> Letter `ha` Upper `har'st` A
+ 'B' -> Letter `ha` Upper `har'st` B
+ 'C' -> Letter `ha` Upper `har'st` C
+ 'D' -> Letter `ha` Upper `har'st` D
+ 'E' -> Letter `ha` Upper `har'st` E
+ 'F' -> Letter `ha` Upper `har'st` F
+ 'G' -> Letter `ha` Upper `har'st` G
+ 'H' -> Letter `ha` Upper `har'st` H
+ 'I' -> Letter `ha` Upper `har'st` I
+ 'J' -> Letter `ha` Upper `har'st` J
+ 'K' -> Letter `ha` Upper `har'st` K
+ 'L' -> Letter `ha` Upper `har'st` L
+ 'M' -> Letter `ha` Upper `har'st` M
+ 'N' -> Letter `ha` Upper `har'st` N
+ 'O' -> Letter `ha` Upper `har'st` O
+ 'P' -> Letter `ha` Upper `har'st` P
+ 'Q' -> Letter `ha` Upper `har'st` Q
+ 'R' -> Letter `ha` Upper `har'st` R
+ 'S' -> Letter `ha` Upper `har'st` S
+ 'T' -> Letter `ha` Upper `har'st` T
+ 'U' -> Letter `ha` Upper `har'st` U
+ 'V' -> Letter `ha` Upper `har'st` V
+ 'W' -> Letter `ha` Upper `har'st` W
+ 'X' -> Letter `ha` Upper `har'st` X
+ 'Y' -> Letter `ha` Upper `har'st` Y
+ 'Z' -> Letter `ha` Upper `har'st` Z
+ 'a' -> Letter `ha` Lower `har'st` A
+ 'b' -> Letter `ha` Lower `har'st` B
+ 'c' -> Letter `ha` Lower `har'st` C
+ 'd' -> Letter `ha` Lower `har'st` D
+ 'e' -> Letter `ha` Lower `har'st` E
+ 'f' -> Letter `ha` Lower `har'st` F
+ 'g' -> Letter `ha` Lower `har'st` G
+ 'h' -> Letter `ha` Lower `har'st` H
+ 'i' -> Letter `ha` Lower `har'st` I
+ 'j' -> Letter `ha` Lower `har'st` J
+ 'k' -> Letter `ha` Lower `har'st` K
+ 'l' -> Letter `ha` Lower `har'st` L
+ 'm' -> Letter `ha` Lower `har'st` M
+ 'n' -> Letter `ha` Lower `har'st` N
+ 'o' -> Letter `ha` Lower `har'st` O
+ 'p' -> Letter `ha` Lower `har'st` P
+ 'q' -> Letter `ha` Lower `har'st` Q
+ 'r' -> Letter `ha` Lower `har'st` R
+ 's' -> Letter `ha` Lower `har'st` S
+ 't' -> Letter `ha` Lower `har'st` T
+ 'u' -> Letter `ha` Lower `har'st` U
+ 'v' -> Letter `ha` Lower `har'st` V
+ 'w' -> Letter `ha` Lower `har'st` W
+ 'x' -> Letter `ha` Lower `har'st` X
+ 'y' -> Letter `ha` Lower `har'st` Y
+ 'z' -> Letter `ha` Lower `har'st` Z
+ '0' -> Digit `har'st` Zero
+ '1' -> Digit `har'st` One
+ '2' -> Digit `har'st` Two
+ '3' -> Digit `har'st` Three
+ '4' -> Digit `har'st` Four
+ '5' -> Digit `har'st` Five
+ '6' -> Digit `har'st` Six
+ '7' -> Digit `har'st` Seven
+ '8' -> Digit `har'st` Eight
+ '9' -> Digit `har'st` Nine
  _ -> error "Not a Glyph!"
 
 char_to_ascii = \case
- '\BS' -> Exist `ha` Caret `hc'st` (Back `ha` Space)
- '\HT' -> Exist `ha` Caret `hc'st` Tab
- '\LF' -> Exist `ha` Caret `hc'st` Newline
- '\ESC' -> Exist `ha` Caret `hc'st` Escape
- ' ' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Space
- '\DEL' -> Exist `ha` Caret `hc'st` Delete
- '/' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` (Back `ha` Slash)
- '\\' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Slash
- '(' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Opened `hc'st` Round
- ')' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Closed `hc'st` Round
- '{' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Opened `hc'st` Curly
- '}' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Closed `hc'st` Curly
- '<' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Opened `hc'st` Angle
- '>' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Closed `hc'st` Angle
- '[' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Opened `hc'st` Square
- ']' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Closed `hc'st` Square
- '"' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Doublequote
- '\'' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Singlequote
- '.' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Period
- ',' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Comma
- ';' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Semicolon
- ':' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Colon
- '!' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Exclam
- '?' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Question
- '#' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Hash
- '$' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Dollar
- '%' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Percent
- '&' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Ampersand
- '*' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Asterisk
- '+' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Plus
- '-' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Hyphen
- '=' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Equality
- '@' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` At
- '^' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Circumflex
- '_' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Underscore
- '`' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Grave
- '|' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Bar
- '~' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `hc'st` Tilde
- 'A' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` A
- 'B' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` B
- 'C' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` C
- 'D' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` D
- 'E' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` E
- 'F' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` F
- 'G' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` G
- 'H' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` H
- 'I' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` I
- 'J' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` J
- 'K' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` K
- 'L' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` L
- 'M' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` M
- 'N' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` N
- 'O' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` O
- 'P' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` P
- 'Q' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` Q
- 'R' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` R
- 'S' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` S
- 'T' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` T
- 'U' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` U
- 'V' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` V
- 'W' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` W
- 'X' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` X
- 'Y' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` Y
- 'Z' -> Exist `ha` Glyph `ha` Letter `ha` Upper `hc'st` Z
- 'a' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` A
- 'b' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` B
- 'c' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` C
- 'd' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` D
- 'e' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` E
- 'f' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` F
- 'g' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` G
- 'h' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` H
- 'i' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` I
- 'j' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` J
- 'k' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` K
- 'l' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` L
- 'm' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` M
- 'n' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` N
- 'o' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` O
- 'p' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` P
- 'q' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` Q
- 'r' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` R
- 's' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` S
- 't' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` T
- 'u' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` U
- 'v' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` V
- 'w' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` W
- 'x' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` X
- 'y' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` Y
- 'z' -> Exist `ha` Glyph `ha` Letter `ha` Lower `hc'st` Z
- '0' -> Exist `ha` Glyph `ha` Digit `hc'st` Zero
- '1' -> Exist `ha` Glyph `ha` Digit `hc'st` One
- '2' -> Exist `ha` Glyph `ha` Digit `hc'st` Two
- '3' -> Exist `ha` Glyph `ha` Digit `hc'st` Three
- '4' -> Exist `ha` Glyph `ha` Digit `hc'st` Four
- '5' -> Exist `ha` Glyph `ha` Digit `hc'st` Five
- '6' -> Exist `ha` Glyph `ha` Digit `hc'st` Six
- '7' -> Exist `ha` Glyph `ha` Digit `hc'st` Seven
- '8' -> Exist `ha` Glyph `ha` Digit `hc'st` Eight
- '9' -> Exist `ha` Glyph `ha` Digit `hc'st` Nine
+ '\BS' -> Exist `ha` Caret `har'st` (Back `ha` Space)
+ '\HT' -> Exist `ha` Caret `har'st` Tab
+ '\LF' -> Exist `ha` Caret `har'st` Newline
+ '\ESC' -> Exist `ha` Caret `har'st` Escape
+ ' ' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Space
+ '\DEL' -> Exist `ha` Caret `har'st` Delete
+ '/' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` (Back `ha` Slash)
+ '\\' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Slash
+ '(' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Opened `har'st` Round
+ ')' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Closed `har'st` Round
+ '{' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Opened `har'st` Curly
+ '}' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Closed `har'st` Curly
+ '<' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Opened `har'st` Angle
+ '>' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Closed `har'st` Angle
+ '[' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Opened `har'st` Square
+ ']' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Closed `har'st` Square
+ '"' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Doublequote
+ '\'' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Singlequote
+ '.' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Period
+ ',' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Comma
+ ';' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Semicolon
+ ':' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Colon
+ '!' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Exclam
+ '?' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Question
+ '#' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Hash
+ '$' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Dollar
+ '%' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Percent
+ '&' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Ampersand
+ '*' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Asterisk
+ '+' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Plus
+ '-' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Hyphen
+ '=' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Equality
+ '@' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` At
+ '^' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Circumflex
+ '_' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Underscore
+ '`' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Grave
+ '|' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Bar
+ '~' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Tilde
+ 'A' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` A
+ 'B' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` B
+ 'C' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` C
+ 'D' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` D
+ 'E' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` E
+ 'F' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` F
+ 'G' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` G
+ 'H' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` H
+ 'I' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` I
+ 'J' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` J
+ 'K' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` K
+ 'L' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` L
+ 'M' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` M
+ 'N' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` N
+ 'O' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` O
+ 'P' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` P
+ 'Q' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` Q
+ 'R' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` R
+ 'S' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` S
+ 'T' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` T
+ 'U' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` U
+ 'V' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` V
+ 'W' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` W
+ 'X' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` X
+ 'Y' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` Y
+ 'Z' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` Z
+ 'a' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` A
+ 'b' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` B
+ 'c' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` C
+ 'd' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` D
+ 'e' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` E
+ 'f' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` F
+ 'g' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` G
+ 'h' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` H
+ 'i' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` I
+ 'j' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` J
+ 'k' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` K
+ 'l' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` L
+ 'm' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` M
+ 'n' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` N
+ 'o' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` O
+ 'p' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` P
+ 'q' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` Q
+ 'r' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` R
+ 's' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` S
+ 't' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` T
+ 'u' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` U
+ 'v' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` V
+ 'w' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` W
+ 'x' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` X
+ 'y' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` Y
+ 'z' -> Exist `ha` Glyph `ha` Letter `ha` Lower `har'st` Z
+ '0' -> Exist `ha` Glyph `ha` Digit `har'st` Zero
+ '1' -> Exist `ha` Glyph `ha` Digit `har'st` One
+ '2' -> Exist `ha` Glyph `ha` Digit `har'st` Two
+ '3' -> Exist `ha` Glyph `ha` Digit `har'st` Three
+ '4' -> Exist `ha` Glyph `ha` Digit `har'st` Four
+ '5' -> Exist `ha` Glyph `ha` Digit `har'st` Five
+ '6' -> Exist `ha` Glyph `ha` Digit `har'st` Six
+ '7' -> Exist `ha` Glyph `ha` Digit `har'st` Seven
+ '8' -> Exist `ha` Glyph `ha` Digit `har'st` Eight
+ '9' -> Exist `ha` Glyph `ha` Digit `har'st` Nine
  _ -> supertype Empty

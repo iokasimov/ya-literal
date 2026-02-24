@@ -17,18 +17,18 @@ instance Show i => Show (List i) where
 instance IsList (Construction Optional i) where
  type Item (Construction Optional i) = i
  fromList x = Build (worker x) where
-  worker (c : []) = Item c `ha` Last `hc` Unit
-  worker (c : cs) = Item c `ha` Next `hc` worker cs
+  worker (c : []) = Item c `ha` Last `har` Unit
+  worker (c : cs) = Item c `ha` Next `har` worker cs
 
 instance IsList (List i) where
  type Item (List i) = i
  fromList [] = empty @List
  fromList xs = List (Exist (Build (worker xs))) where
-  worker (c : []) = Item c `ha` Last `hc` Unit
-  worker (c : cs) = Item c `ha` Next `hc` worker cs
- toList xs = that @[_] `hc____` xs
+  worker (c : []) = Item c `ha` Last `har` Unit
+  worker (c : cs) = Item c `ha` Next `har` worker cs
+ toList xs = that @[_] `har___` xs
   `yokl` Prior `ha` Apply `ha` State `ha` Event `ha_` (:) `ho'ho` fetch
-  `hc___` []
+  `bt'har__` []
 
 instance IsList (Twice `T'TT'I` List `T'I_` i) where
  type Item (Twice `T'TT'I` List `T'I_` i) = [i]
@@ -45,14 +45,14 @@ instance IsList ((List `P'T'I'TT'I` Twice `T'TT'I` List) i) where
 instance IsList (Construction Optional `T'TT'I` Along k `T'I_` i) where
  type Item (Construction Optional `T'TT'I` Along k `T'I_` i) = (k, i)
  fromList x = T'TT'I (Build (worker x)) where
-  worker ((k,c) : []) = Item (c `hjd` k) `ha` Last `hc` Unit
-  worker ((k,c) : kcs) = Item (c `hjd` k) `ha` Next `hc` worker kcs
+  worker ((k,c) : []) = Item (c `hjd` k) `ha` Last `har` Unit
+  worker ((k,c) : kcs) = Item (c `hjd` k) `ha` Next `har` worker kcs
 
 instance IsList (List `T'TT'I` Along k `T'I_` i) where
  type Item (List `T'TT'I` Along k `T'I_` i) = (k, i)
  fromList x = T'TT'I (List (Exist (Build (worker x)))) where
-  worker ((k,c) : []) = Item (c `hjd` k) `ha` Last `hc` Unit
-  worker ((k,c) : kcs) = Item (c `hjd` k) `ha` Next `hc` worker kcs
+  worker ((k,c) : []) = Item (c `hjd` k) `ha` Last `har` Unit
+  worker ((k,c) : kcs) = Item (c `hjd` k) `ha` Next `har` worker kcs
 
 -- instance IsList (Construction List i) where
  -- type Item (Construction List i) = (i, Tree (List i))
