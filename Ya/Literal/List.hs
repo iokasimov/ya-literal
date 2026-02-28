@@ -32,27 +32,27 @@ instance IsList (List i) where
 
 instance IsList (Twice `T'TT'I` List `T'I_` i) where
  type Item (Twice `T'TT'I` List `T'I_` i) = [i]
- fromList [sx,xs] = fromList @(List i) (reverse sx) `hjd` fromList @(List i) xs
+ fromList [sx,xs] = fromList @(List i) (reverse sx) `hjd'tb` fromList @(List i) xs
 
 instance IsList ((Alone `P'T'I'TT'I` Twice `T'TT'I` List) i) where
  type Item ((Alone `P'T'I'TT'I` Twice `T'TT'I` List) i) = [i]
- fromList [sx,[x],xs] = Alone x `hjd` (fromList @(List i) (reverse sx) `hjd` fromList @(List i) xs)
+ fromList [sx,[x],xs] = Alone x `hjd'tb` (fromList @(List i) (reverse sx) `hjd'tb` fromList @(List i) xs)
 
 instance IsList ((List `P'T'I'TT'I` Twice `T'TT'I` List) i) where
  type Item ((List `P'T'I'TT'I` Twice `T'TT'I` List) i) = [i]
- fromList [sx,x,xs] = T'TT'I'TTT'I (fromList @(List i) x `hjd` (fromList @(List i) (reverse sx) `hjd` fromList @(List i) xs))
+ fromList [sx,x,xs] = T'TT'I'TTT'I (fromList @(List i) x `hjd'tb` (fromList @(List i) (reverse sx) `hjd'tb` fromList @(List i) xs))
 
 instance IsList (Construction Optional `T'TT'I` Along k `T'I_` i) where
  type Item (Construction Optional `T'TT'I` Along k `T'I_` i) = (k, i)
  fromList x = T'TT'I (Build (worker x)) where
-  worker ((k,c) : []) = Item (c `hjd` k) `ha` Last `har` Unit
-  worker ((k,c) : kcs) = Item (c `hjd` k) `ha` Next `har` worker kcs
+  worker ((k,c) : []) = Item (c `hjd'tb` k) `ha` Last `har` Unit
+  worker ((k,c) : kcs) = Item (c `hjd'tb` k) `ha` Next `har` worker kcs
 
 instance IsList (List `T'TT'I` Along k `T'I_` i) where
  type Item (List `T'TT'I` Along k `T'I_` i) = (k, i)
  fromList x = T'TT'I (List (Exist (Build (worker x)))) where
-  worker ((k,c) : []) = Item (c `hjd` k) `ha` Last `har` Unit
-  worker ((k,c) : kcs) = Item (c `hjd` k) `ha` Next `har` worker kcs
+  worker ((k,c) : []) = Item (c `hjd'tb` k) `ha` Last `har` Unit
+  worker ((k,c) : kcs) = Item (c `hjd'tb` k) `ha` Next `har` worker kcs
 
 -- instance IsList (Construction List i) where
  -- type Item (Construction List i) = (i, Tree (List i))
