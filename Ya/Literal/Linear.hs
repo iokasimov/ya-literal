@@ -5,14 +5,11 @@ import Ya
 
 import GHC.TypeNats
 
-type Scalar = I
-
-pattern Scalar :: e `AR` Scalar e
-pattern Scalar e = Identity e
+type Scalar = Alone
 
 type family Vector n where
- Vector 1 = I
- Vector n = Vector (n - 1) `P'T'I'TT'I` I
+ Vector 1 = Scalar
+ Vector n = Vector (n - 1) `P'T'I'TT'I` Scalar
 
 type Matrix n m = Vector n `T'TT'I` Vector m
 
