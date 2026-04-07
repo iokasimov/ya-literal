@@ -27,9 +27,9 @@ type family Tensor n where
 pattern Tensor :: forall n i . Tensor n i `AR__` Tensor n i
 pattern Tensor x = x
 
-type family N x where
- N 1 = Unit
- N n = N (n - 1) `S` Unit
+type family Size x where
+ Size 1 = Unit
+ Size n = Size (n - 1) `S` Unit
 
 type family Shape x where
  Shape Alone = Unit
