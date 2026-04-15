@@ -61,34 +61,34 @@ char_to_letter = \case
  x -> error ('<' : x : "> is not a latin character!")
 
 caret_to_char :: Caret -> Char
-caret_to_char = is `hu` '\HT' `has` is `hu` '\LF' `has` is `hu` '\ESC' `has` is `hu` '\BS' `has` is `hu` '\DEL'
+caret_to_char = is `ho'ut` '\HT' `has` is `ho'ut` '\LF' `has` is `ho'ut` '\ESC' `has` is `ho'ut` '\BS' `has` is `ho'ut` '\DEL'
 
 bracket_to_char :: Bracket -> Char
-bracket_to_char = is `hu` '(' `has` is `hu` '{' `has` is `hu` '<' `has` is `hu` '['
-              `has_` is `hu` ')' `has` is `hu` '}' `has` is `hu` '>' `has` is `hu` ']'
+bracket_to_char = is `ho'ut` '(' `has` is `ho'ut` '{' `has` is `ho'ut` '<' `has` is `ho'ut` '['
+              `has_` is `ho'ut` ')' `has` is `ho'ut` '}' `has` is `ho'ut` '>' `has` is `ho'ut` ']'
 
 punctuation_to_char :: Punctuate -> Char
-punctuation_to_char = is `hu` '\"' `has` is `hu` '\'' `has` is `hu` '#' `has` is `hu` '=' `has` is `hu` '-' `has` is `hu` '@'
- `has` is `hu` '^' `has` is `hu` '_' `has` is `hu` '`' `has` is `hu` '|' `has` is `hu` '~'
- `has` is `hu` '+' `has` is `hu` '*' `has` is `hu` '%' `has` is `hu` '&' `has` is `hu` '$' `has` is `hu` '\\' `has` is `hu` '/'
- `has` is `hu` '.' `has` is `hu` ',' `has` is `hu` ';' `has` is `hu` ':' `has` is `hu` '!' `has` is `hu` '?' `has` is `hu` ' '
+punctuation_to_char = is `ho'ut` '\"' `has` is `ho'ut` '\'' `has` is `ho'ut` '#' `has` is `ho'ut` '=' `has` is `ho'ut` '-' `has` is `ho'ut` '@'
+ `has` is `ho'ut` '^' `has` is `ho'ut` '_' `has` is `ho'ut` '`' `has` is `ho'ut` '|' `has` is `ho'ut` '~'
+ `has` is `ho'ut` '+' `has` is `ho'ut` '*' `has` is `ho'ut` '%' `has` is `ho'ut` '&' `has` is `ho'ut` '$' `has` is `ho'ut` '\\' `has` is `ho'ut` '/'
+ `has` is `ho'ut` '.' `has` is `ho'ut` ',' `has` is `ho'ut` ';' `has` is `ho'ut` ':' `has` is `ho'ut` '!' `has` is `ho'ut` '?' `has` is `ho'ut` ' '
 
 upper_latin_to_char :: Latin -> Char
-upper_latin_to_char = is `hu` 'A' `has` is `hu` 'B' `has` is `hu` 'C' `has` is `hu` 'D' `has` is `hu` 'E' `has` is `hu` 'F'
- `has` is `hu` 'G' `has` is `hu` 'H' `has` is `hu` 'I' `has` is `hu` 'J' `has` is `hu` 'K' `has` is `hu` 'L'
- `has` is `hu` 'M' `has` is `hu` 'N' `has` is `hu` 'O' `has` is `hu` 'P' `has` is `hu` 'Q' `has` is `hu` 'R'
- `has` is `hu` 'S' `has` is `hu` 'T' `has` is `hu` 'U' `has` is `hu` 'V' `has` is `hu` 'W' `has` is `hu` 'X'
- `has` is `hu` 'Y' `has` is `hu` 'Z'
+upper_latin_to_char = is `ho'ut` 'A' `has` is `ho'ut` 'B' `has` is `ho'ut` 'C' `has` is `ho'ut` 'D' `has` is `ho'ut` 'E' `has` is `ho'ut` 'F'
+ `has` is `ho'ut` 'G' `has` is `ho'ut` 'H' `has` is `ho'ut` 'I' `has` is `ho'ut` 'J' `has` is `ho'ut` 'K' `has` is `ho'ut` 'L'
+ `has` is `ho'ut` 'M' `has` is `ho'ut` 'N' `has` is `ho'ut` 'O' `has` is `ho'ut` 'P' `has` is `ho'ut` 'Q' `has` is `ho'ut` 'R'
+ `has` is `ho'ut` 'S' `has` is `ho'ut` 'T' `has` is `ho'ut` 'U' `has` is `ho'ut` 'V' `has` is `ho'ut` 'W' `has` is `ho'ut` 'X'
+ `has` is `ho'ut` 'Y' `has` is `ho'ut` 'Z'
 
 lower_latin_to_char :: Latin -> Char
-lower_latin_to_char = is `hu` 'a' `has` is `hu` 'b' `has` is `hu` 'c' `has` is `hu` 'd' `has` is `hu` 'e' `has` is `hu` 'f'
- `has` is `hu` 'g' `has` is `hu` 'h' `has` is `hu` 'i' `has` is `hu` 'j' `has` is `hu` 'k' `has` is `hu` 'l'
- `has` is `hu` 'm' `has` is `hu` 'n' `has` is `hu` 'o' `has` is `hu` 'p' `has` is `hu` 'q' `has` is `hu` 'r'
- `has` is `hu` 's' `has` is `hu` 't' `has` is `hu` 'u' `has` is `hu` 'v' `has` is `hu` 'w' `has` is `hu` 'x'
- `has` is `hu` 'y' `has` is `hu` 'z'
+lower_latin_to_char = is `ho'ut` 'a' `has` is `ho'ut` 'b' `has` is `ho'ut` 'c' `has` is `ho'ut` 'd' `has` is `ho'ut` 'e' `has` is `ho'ut` 'f'
+ `has` is `ho'ut` 'g' `has` is `ho'ut` 'h' `has` is `ho'ut` 'i' `has` is `ho'ut` 'j' `has` is `ho'ut` 'k' `has` is `ho'ut` 'l'
+ `has` is `ho'ut` 'm' `has` is `ho'ut` 'n' `has` is `ho'ut` 'o' `has` is `ho'ut` 'p' `has` is `ho'ut` 'q' `has` is `ho'ut` 'r'
+ `has` is `ho'ut` 's' `has` is `ho'ut` 't' `has` is `ho'ut` 'u' `has` is `ho'ut` 'v' `has` is `ho'ut` 'w' `has` is `ho'ut` 'x'
+ `has` is `ho'ut` 'y' `has` is `ho'ut` 'z'
 
 digit_to_char :: Digit -> Char
-digit_to_char = is `hu` '0' `has` is `hu` '1' `has` is `hu` '2' `has` is `hu` '3' `has` is `hu` '4' `has` is `hu` '5' `has` is `hu` '6' `has` is `hu` '7' `has` is `hu` '8' `has` is `hu` '9'
+digit_to_char = is `ho'ut` '0' `has` is `ho'ut` '1' `has` is `ho'ut` '2' `has` is `ho'ut` '3' `has` is `ho'ut` '4' `has` is `ho'ut` '5' `has` is `ho'ut` '6' `has` is `ho'ut` '7' `has` is `ho'ut` '8' `has` is `ho'ut` '9'
 
 ascii_to_char :: ASCII -> Char
 ascii_to_char = is
@@ -100,39 +100,39 @@ ascii_to_char = is
  `has_` caret_to_char `ha` is
 
 glyph_to_ascii = \case
- ' ' -> Symbol `ha` Punctuate `har'st` Space
- '/' -> Symbol `ha` Punctuate `har'st` (Back `ha` Slash)
- '\\' -> Symbol `ha` Punctuate `har'st` Slash
- '(' -> Symbol `ha` Bracket `ha` Opened `har'st` Round
- ')' -> Symbol `ha` Bracket `ha` Closed `har'st` Round
- '{' -> Symbol `ha` Bracket `ha` Opened `har'st` Curly
- '}' -> Symbol `ha` Bracket `ha` Closed `har'st` Curly
- '<' -> Symbol `ha` Bracket `ha` Opened `har'st` Angle
- '>' -> Symbol `ha` Bracket `ha` Closed `har'st` Angle
- '[' -> Symbol `ha` Bracket `ha` Opened `har'st` Square
- ']' -> Symbol `ha` Bracket `ha` Closed `har'st` Square
- '"' -> Symbol `ha` Punctuate `har'st` Doublequote
- '\'' -> Symbol `ha` Punctuate `har'st` Singlequote
- '.' -> Symbol `ha` Punctuate `har'st` Period
- ',' -> Symbol `ha` Punctuate `har'st` Comma
- ';' -> Symbol `ha` Punctuate `har'st` Semicolon
- ':' -> Symbol `ha` Punctuate `har'st` Colon
- '!' -> Symbol `ha` Punctuate `har'st` Exclam
- '?' -> Symbol `ha` Punctuate `har'st` Question
- '#' -> Symbol `ha` Punctuate `har'st` Hash
- '$' -> Symbol `ha` Punctuate `har'st` Dollar
- '%' -> Symbol `ha` Punctuate `har'st` Percent
- '&' -> Symbol `ha` Punctuate `har'st` Ampersand
- '*' -> Symbol `ha` Punctuate `har'st` Asterisk
- '+' -> Symbol `ha` Punctuate `har'st` Plus
- '-' -> Symbol `ha` Punctuate `har'st` Hyphen
- '=' -> Symbol `ha` Punctuate `har'st` Equality
- '@' -> Symbol `ha` Punctuate `har'st` At
- '^' -> Symbol `ha` Punctuate `har'st` Circumflex
- '_' -> Symbol `ha` Punctuate `har'st` Underscore
- '`' -> Symbol `ha` Punctuate `har'st` Grave
- '|' -> Symbol `ha` Punctuate `har'st` Bar
- '~' -> Symbol `ha` Punctuate `har'st` Tilde
+ ' ' -> Symbol `ha` Punctuate `ha` Space `har` Unit
+ '/' -> Symbol `ha` Punctuate `ha` Back `ha` Slash `har` Unit
+ '\\' -> Symbol `ha` Punctuate `ha` Slash `har` Unit
+ '(' -> Symbol `ha` Bracket `ha` Opened `ha` Round `har` Unit
+ ')' -> Symbol `ha` Bracket `ha` Closed `ha` Round `har` Unit
+ '{' -> Symbol `ha` Bracket `ha` Opened `ha` Curly `har` Unit
+ '}' -> Symbol `ha` Bracket `ha` Closed `ha` Curly `har` Unit
+ '<' -> Symbol `ha` Bracket `ha` Opened `ha` Angle `har` Unit
+ '>' -> Symbol `ha` Bracket `ha` Closed `ha` Angle `har` Unit
+ '[' -> Symbol `ha` Bracket `ha` Opened `ha` Square `har` Unit
+ ']' -> Symbol `ha` Bracket `ha` Closed `ha` Square `har` Unit
+ '"' -> Symbol `ha` Punctuate `ha` Doublequote `har` Unit
+ '\'' -> Symbol `ha` Punctuate `ha` Singlequote `har` Unit
+ '.' -> Symbol `ha` Punctuate `ha` Period `har` Unit
+ ',' -> Symbol `ha` Punctuate `ha` Comma `har` Unit
+ ';' -> Symbol `ha` Punctuate `ha` Semicolon `har` Unit
+ ':' -> Symbol `ha` Punctuate `ha` Colon `har` Unit
+ '!' -> Symbol `ha` Punctuate `ha` Exclamation `har` Unit
+ '?' -> Symbol `ha` Punctuate `ha` Question `har` Unit
+ '#' -> Symbol `ha` Punctuate `ha` Hash `har` Unit
+ '$' -> Symbol `ha` Punctuate `ha` Dollar `har` Unit
+ '%' -> Symbol `ha` Punctuate `ha` Percent `har` Unit
+ '&' -> Symbol `ha` Punctuate `ha` Ampersand `har` Unit
+ '*' -> Symbol `ha` Punctuate `ha` Asterisk `har` Unit
+ '+' -> Symbol `ha` Punctuate `ha` Plus `har` Unit
+ '-' -> Symbol `ha` Punctuate `ha` Hyphen `har` Unit
+ '=' -> Symbol `ha` Punctuate `ha` Equal `har` Unit
+ '@' -> Symbol `ha` Punctuate `ha` At `har` Unit
+ '^' -> Symbol `ha` Punctuate `ha` Circumflex `har` Unit
+ '_' -> Symbol `ha` Punctuate `ha` Underscore `har` Unit
+ '`' -> Symbol `ha` Punctuate `ha` Grave `har` Unit
+ '|' -> Symbol `ha` Punctuate `ha` Bar `har` Unit
+ '~' -> Symbol `ha` Punctuate `ha` Tilde `har` Unit
  'A' -> Letter `ha` Upper `har'st` A
  'B' -> Letter `ha` Upper `har'st` B
  'C' -> Letter `ha` Upper `har'st` C
@@ -198,14 +198,14 @@ glyph_to_ascii = \case
  _ -> error "Not a Glyph!"
 
 char_to_ascii = \case
- '\BS' -> Exist `ha` Caret `har'st` (Back `ha` Space)
- '\HT' -> Exist `ha` Caret `har'st` Tab
- '\LF' -> Exist `ha` Caret `har'st` Newline
- '\ESC' -> Exist `ha` Caret `har'st` Escape
- ' ' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Space
- '\DEL' -> Exist `ha` Caret `har'st` Delete
- '/' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` (Back `ha` Slash)
- '\\' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Slash
+ '\BS' -> Exist `ha` Caret `ha` Back `ha` Space `har` Unit
+ '\HT' -> Exist `ha` Caret `ha` Tab `har` Unit
+ '\LF' -> Exist `ha` Caret `ha` Newline `har` Unit
+ '\ESC' -> Exist `ha` Caret `ha` Escape `har` Unit
+ ' ' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Space `har` Unit
+ '\DEL' -> Exist `ha` Caret `ha` Delete `har` Unit
+ '/' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Back `ha` Slash `har` Unit
+ '\\' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Slash `har` Unit
  '(' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Opened `har'st` Round
  ')' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Closed `har'st` Round
  '{' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Opened `har'st` Curly
@@ -214,28 +214,28 @@ char_to_ascii = \case
  '>' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Closed `har'st` Angle
  '[' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Opened `har'st` Square
  ']' -> Exist `ha` Glyph `ha` Symbol `ha` Bracket `ha` Closed `har'st` Square
- '"' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Doublequote
- '\'' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Singlequote
- '.' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Period
- ',' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Comma
- ';' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Semicolon
- ':' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Colon
- '!' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Exclam
- '?' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Question
- '#' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Hash
- '$' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Dollar
- '%' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Percent
- '&' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Ampersand
- '*' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Asterisk
- '+' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Plus
- '-' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Hyphen
- '=' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Equality
- '@' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` At
- '^' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Circumflex
- '_' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Underscore
- '`' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Grave
- '|' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Bar
- '~' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `har'st` Tilde
+ '"' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Doublequote `har` Unit
+ '\'' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Singlequote `har` Unit
+ '.' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Period `har` Unit
+ ',' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Comma `har` Unit
+ ';' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Semicolon `har` Unit
+ ':' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Colon `har` Unit
+ '!' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Exclamation `har` Unit
+ '?' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Question `har` Unit
+ '#' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Hash `har` Unit
+ '$' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Dollar `har` Unit
+ '%' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Percent `har` Unit
+ '&' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Ampersand `har` Unit
+ '*' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Asterisk `har` Unit
+ '+' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Plus `har` Unit
+ '-' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Hyphen `har` Unit
+ '=' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Equal `har` Unit
+ '@' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` At `har` Unit
+ '^' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Circumflex `har` Unit
+ '_' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Underscore `har` Unit
+ '`' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Grave `har` Unit
+ '|' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Bar `har` Unit
+ '~' -> Exist `ha` Glyph `ha` Symbol `ha` Punctuate `ha` Tilde `har` Unit
  'A' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` A
  'B' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` B
  'C' -> Exist `ha` Glyph `ha` Letter `ha` Upper `har'st` C
