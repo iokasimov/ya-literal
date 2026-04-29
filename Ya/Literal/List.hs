@@ -27,7 +27,7 @@ instance IsList (List i) where
   worker (c : []) = Item c `ha` Last `har` Unit
   worker (c : cs) = Item c `ha` Next `har` worker cs
  toList xs = that @[_] `har___` xs
-  `yokl` Prior `ha` Apply `ha` State `ha` Event `ha_` (:) `ho'ho` fetch
+  `yokl` Prior `ha` Apply `ha` State `ha` Event `ha_` (:) `ho'ho` Pull
   `bt'har__` []
 
 instance IsList (Twice `T'TT'I` List `T'I_` i) where
