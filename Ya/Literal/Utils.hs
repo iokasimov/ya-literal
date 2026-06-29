@@ -61,43 +61,43 @@ char_to_letter = \case
  x -> error ('<' : x : "> is not a latin character!")
 
 caret_to_char :: Caret -> Char
-caret_to_char = is `ho'ut` '\HT' `has` is `ho'ut` '\LF' `has` is `ho'ut` '\ESC' `has` is `ho'ut` '\BS' `has` is `ho'ut` '\DEL'
+caret_to_char = itself `ho'ut` '\HT' `has` itself `ho'ut` '\LF' `has` itself `ho'ut` '\ESC' `has` itself `ho'ut` '\BS' `has` itself `ho'ut` '\DEL'
 
 bracket_to_char :: Bracket -> Char
-bracket_to_char = is `ho'ut` '(' `has` is `ho'ut` '{' `has` is `ho'ut` '<' `has` is `ho'ut` '['
-              `has_` is `ho'ut` ')' `has` is `ho'ut` '}' `has` is `ho'ut` '>' `has` is `ho'ut` ']'
+bracket_to_char = itself `ho'ut` '(' `has` itself `ho'ut` '{' `has` itself `ho'ut` '<' `has` itself `ho'ut` '['
+              `has_` itself `ho'ut` ')' `has` itself `ho'ut` '}' `has` itself `ho'ut` '>' `has` itself `ho'ut` ']'
 
 punctuation_to_char :: Punctuate -> Char
-punctuation_to_char = is `ho'ut` '\"' `has` is `ho'ut` '\'' `has` is `ho'ut` '#' `has` is `ho'ut` '=' `has` is `ho'ut` '-' `has` is `ho'ut` '@'
- `has` is `ho'ut` '^' `has` is `ho'ut` '_' `has` is `ho'ut` '`' `has` is `ho'ut` '|' `has` is `ho'ut` '~'
- `has` is `ho'ut` '+' `has` is `ho'ut` '*' `has` is `ho'ut` '%' `has` is `ho'ut` '&' `has` is `ho'ut` '$' `has` is `ho'ut` '\\' `has` is `ho'ut` '/'
- `has` is `ho'ut` '.' `has` is `ho'ut` ',' `has` is `ho'ut` ';' `has` is `ho'ut` ':' `has` is `ho'ut` '!' `has` is `ho'ut` '?' `has` is `ho'ut` ' '
+punctuation_to_char = itself `ho'ut` '\"' `has` itself `ho'ut` '\'' `has` itself `ho'ut` '#' `has` itself `ho'ut` '=' `has` itself `ho'ut` '-' `has` itself `ho'ut` '@'
+ `has` itself `ho'ut` '^' `has` itself `ho'ut` '_' `has` itself `ho'ut` '`' `has` itself `ho'ut` '|' `has` itself `ho'ut` '~'
+ `has` itself `ho'ut` '+' `has` itself `ho'ut` '*' `has` itself `ho'ut` '%' `has` itself `ho'ut` '&' `has` itself `ho'ut` '$' `has` itself `ho'ut` '\\' `has` itself `ho'ut` '/'
+ `has` itself `ho'ut` '.' `has` itself `ho'ut` ',' `has` itself `ho'ut` ';' `has` itself `ho'ut` ':' `has` itself `ho'ut` '!' `has` itself `ho'ut` '?' `has` itself `ho'ut` ' '
 
 upper_latin_to_char :: Latin -> Char
-upper_latin_to_char = is `ho'ut` 'A' `has` is `ho'ut` 'B' `has` is `ho'ut` 'C' `has` is `ho'ut` 'D' `has` is `ho'ut` 'E' `has` is `ho'ut` 'F'
- `has` is `ho'ut` 'G' `has` is `ho'ut` 'H' `has` is `ho'ut` 'I' `has` is `ho'ut` 'J' `has` is `ho'ut` 'K' `has` is `ho'ut` 'L'
- `has` is `ho'ut` 'M' `has` is `ho'ut` 'N' `has` is `ho'ut` 'O' `has` is `ho'ut` 'P' `has` is `ho'ut` 'Q' `has` is `ho'ut` 'R'
- `has` is `ho'ut` 'S' `has` is `ho'ut` 'T' `has` is `ho'ut` 'U' `has` is `ho'ut` 'V' `has` is `ho'ut` 'W' `has` is `ho'ut` 'X'
- `has` is `ho'ut` 'Y' `has` is `ho'ut` 'Z'
+upper_latin_to_char = itself `ho'ut` 'A' `has` itself `ho'ut` 'B' `has` itself `ho'ut` 'C' `has` itself `ho'ut` 'D' `has` itself `ho'ut` 'E' `has` itself `ho'ut` 'F'
+ `has` itself `ho'ut` 'G' `has` itself `ho'ut` 'H' `has` itself `ho'ut` 'I' `has` itself `ho'ut` 'J' `has` itself `ho'ut` 'K' `has` itself `ho'ut` 'L'
+ `has` itself `ho'ut` 'M' `has` itself `ho'ut` 'N' `has` itself `ho'ut` 'O' `has` itself `ho'ut` 'P' `has` itself `ho'ut` 'Q' `has` itself `ho'ut` 'R'
+ `has` itself `ho'ut` 'S' `has` itself `ho'ut` 'T' `has` itself `ho'ut` 'U' `has` itself `ho'ut` 'V' `has` itself `ho'ut` 'W' `has` itself `ho'ut` 'X'
+ `has` itself `ho'ut` 'Y' `has` itself `ho'ut` 'Z'
 
 lower_latin_to_char :: Latin -> Char
-lower_latin_to_char = is `ho'ut` 'a' `has` is `ho'ut` 'b' `has` is `ho'ut` 'c' `has` is `ho'ut` 'd' `has` is `ho'ut` 'e' `has` is `ho'ut` 'f'
- `has` is `ho'ut` 'g' `has` is `ho'ut` 'h' `has` is `ho'ut` 'i' `has` is `ho'ut` 'j' `has` is `ho'ut` 'k' `has` is `ho'ut` 'l'
- `has` is `ho'ut` 'm' `has` is `ho'ut` 'n' `has` is `ho'ut` 'o' `has` is `ho'ut` 'p' `has` is `ho'ut` 'q' `has` is `ho'ut` 'r'
- `has` is `ho'ut` 's' `has` is `ho'ut` 't' `has` is `ho'ut` 'u' `has` is `ho'ut` 'v' `has` is `ho'ut` 'w' `has` is `ho'ut` 'x'
- `has` is `ho'ut` 'y' `has` is `ho'ut` 'z'
+lower_latin_to_char = itself `ho'ut` 'a' `has` itself `ho'ut` 'b' `has` itself `ho'ut` 'c' `has` itself `ho'ut` 'd' `has` itself `ho'ut` 'e' `has` itself `ho'ut` 'f'
+ `has` itself `ho'ut` 'g' `has` itself `ho'ut` 'h' `has` itself `ho'ut` 'i' `has` itself `ho'ut` 'j' `has` itself `ho'ut` 'k' `has` itself `ho'ut` 'l'
+ `has` itself `ho'ut` 'm' `has` itself `ho'ut` 'n' `has` itself `ho'ut` 'o' `has` itself `ho'ut` 'p' `has` itself `ho'ut` 'q' `has` itself `ho'ut` 'r'
+ `has` itself `ho'ut` 's' `has` itself `ho'ut` 't' `has` itself `ho'ut` 'u' `has` itself `ho'ut` 'v' `has` itself `ho'ut` 'w' `has` itself `ho'ut` 'x'
+ `has` itself `ho'ut` 'y' `has` itself `ho'ut` 'z'
 
 digit_to_char :: Digit -> Char
-digit_to_char = is `ho'ut` '0' `has` is `ho'ut` '1' `has` is `ho'ut` '2' `has` is `ho'ut` '3' `has` is `ho'ut` '4' `has` is `ho'ut` '5' `has` is `ho'ut` '6' `has` is `ho'ut` '7' `has` is `ho'ut` '8' `has` is `ho'ut` '9'
+digit_to_char = itself `ho'ut` '0' `has` itself `ho'ut` '1' `has` itself `ho'ut` '2' `has` itself `ho'ut` '3' `has` itself `ho'ut` '4' `has` itself `ho'ut` '5' `has` itself `ho'ut` '6' `has` itself `ho'ut` '7' `has` itself `ho'ut` '8' `has` itself `ho'ut` '9'
 
 ascii_to_char :: ASCII -> Char
-ascii_to_char = is
+ascii_to_char = itself
  `har` lower_latin_to_char
   `has` upper_latin_to_char
- `has_` digit_to_char `ha` is
- `has_` bracket_to_char `ha` is
-  `has` punctuation_to_char `ha` is
- `has_` caret_to_char `ha` is
+ `has_` digit_to_char `ha` itself
+ `has_` bracket_to_char `ha` itself
+  `has` punctuation_to_char `ha` itself
+ `has_` caret_to_char `ha` itself
 
 glyph_to_ascii = \case
  ' ' -> Symbol `ha` Punctuate `ha` Space `har` Unit

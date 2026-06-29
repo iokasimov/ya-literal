@@ -43,3 +43,22 @@ type Slots n = Shape (Tensor n)
 
 pattern Slots :: forall n . Slots n `AR__` Slots n
 pattern Slots x = x
+
+type Square n = Matrix n n
+
+type family Repeated n i where
+ Repeated 1 i = i
+ Repeated n i = Repeated (n - 1) i `P` i
+
+class Vectorise n i where
+ vector :: Repeated n i `AR` Vector n i
+
+instance Vectorise 1 i where
+ vector = Alone
+
+instance
+ ( Repeated n i ~ (Repeated (n - 1) i `P` i)
+ , Vector n ~ (Vector (n - 1) `P'T'I'TT'I` I)
+ , Vectorise (n - 1) i
+ ) => Vectorise n i where
+ vector (These xx x) = T'TT'I'TTT'I (These (vector @(n - 1) @i xx) (Alone x))
